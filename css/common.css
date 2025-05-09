@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li, ul, ol {
+  list-style: none;
+}
+
+html {
+  font-size: 12px;
+}
+
+.wrap {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.contentswrap {
+  width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav {
+  width: 100%;
+  background-color: antiquewhite;
+  height: 80px;
+}
+
+.search input {
+  width: 680px;
+  height: 48px;
+  border-radius: 25px;
+  border: 1px solid #f2f2f2;
+}
+
+.logo img {
+  width: 180px;
+  height: 66px;
+}
+
+.hamburger {
+  display: none;
+}
+
+.slide {
+  width: 890px;
+  height: 380px;
+  background-color: aqua;
+  margin-bottom: 30px;
+}
+
+.iconwrap {
+  width: 100%;
+  height: 96px;
+  background-color: antiquewhite;
+  margin-bottom: 60px;
+}
+
+.iconwrap ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.iconwrap li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.iconwrap li a, span {
+  align-self: center;
+}
+
+.iconwrap .ad1 {
+  margin-left: 1%;
+}
+
+.book {
+  width: 100%;
+  height: 300px;
+  background-color: aqua;
+  margin-bottom: 80px;
+}
+
+.AD {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+.bookslide {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 80px;
+  background-color: antiquewhite;
+}
+
+.ai {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 80px;
+  background-color: antiquewhite;
+}
+
+.besttab {
+  width: 100%;
+  height: 726px;
+  margin-bottom: 80px;
+  background-color: antiquewhite;
+}
+
+.zoomslide {
+  width: 100%;
+  height: 200px;
+  background-color: aqua;
+  margin-bottom: 80px;
+}
+
+.casting {
+  width: 100%;
+  height: 250px;
+  background-color: aqua;
+  margin-bottom: 80px;
+}
+
+.event {
+  width: 100%;
+  height: 224px;
+  margin-bottom: 80px;
+  background-color: antiquewhite;
+}
