@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>교보문고 | 대한민국 최고의 도서쇼핑몰</title>
     <link rel="stylesheet" href="./css/common.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="./java/common.js"></script>
 </head>
 
 <body>
@@ -89,11 +91,17 @@
             <img src="./img/bannerad1.png" alt="ad1">
             <img src="./img/bannerad2.png" alt="ad2">
         </div>
-        <div class="bookslide">
+        <div class="scentslide">
             <h2>The Scent of Page</h2>
+            <div class="scent-wrapper">
+                <div class="scentarray"></div>
+            </div>
         </div>
         <div class="bookslide">
             <h2>출판사에서 자신있게 추천해요</h2>
+            <div class="book-wrapper">
+                <div class="bookarray" id="book1"></div>
+            </div>
         </div>
 
         <div class="AD">
@@ -103,10 +111,16 @@
 
         <div class="bookslide">
             <h2>MD들이 신중하게 골랐어요</h2>
+            <div class="book-wrapper">
+                <div class="bookarray" id="book2"></div>
+            </div>
         </div>
 
         <div class="bookslide">
             <h2>방금 본 상품과 비슷한 상품이에요</h2>
+            <div class="book-wrapper">
+                <div class="bookarray" id="book3"></div>
+            </div>
         </div>
 
         <div class="ai">
@@ -118,11 +132,39 @@
         </div>
 
         <div class="besttab">
+            <div class="tabmain">
+
+                <div class="tabfirst">
+                    <h1>베스트</h1>
+                    <span>더보기+</span>
+                </div>
+
+                <ul>
+                    <li>전체</li>
+                    <li>국내도서</li>
+                    <li>외국도서</li>
+                    <li>eBook</li>
+                    <li>sam</li>
+                    <li>핫트랙스</li>
+                    <li>교보only</li>
+                </ul>
+
+                <ul>
+                    <li>스테디셀러</li>
+                    <li>국내도서</li>
+                    <li>외국도서</li>
+                </ul>
+            </div>
+
+            <div class="bookbest" id="bookbest1"></div>
 
         </div>
 
         <div class="bookslide">
             <h2>사람들이 많이 찾고 있어요</h2>
+            <div class="book-wrapper">
+                <div class="bookarray" id="book4"></div>
+            </div>
         </div>
 
         <div class="zoomslide">
@@ -135,14 +177,21 @@
 
         <div class="bookslide">
             <h2>교보문고가 만들었어요</h2>
+            <div class="book-wrapper">
+                <div class="bookarray" id="book5"></div>
+            </div>
         </div>
 
         <div class="bookslide">
             <h2>바로출판POD</h2>
+            <div class="book-wrapper">
+                <div class="bookarray" id="book6"></div>
+            </div>
         </div>
 
         <div class="casting">
             <h2>CASTing</h2>
+
         </div>
 
         <div class="event">
@@ -154,8 +203,31 @@
             </ul>
             <a href="#">더보기 +</a>
         </div>
-        <footer></footer>
     </div>
+    <!-- 푸터 -->
+    <footer>
+        <hr>
+        <div class="wrap">
+            <div class="footertop">
+                <div class="footertop-left">
+                    <div class="footertoptitle">공지사항</div>
+                    <p>기프트카드 이용약관 변경 안내</p>
+                    <span>더보기+</span>
+                </div>
+                <div class="footergp"> <span>|</span></div>
+                <div class="footertop-right">
+                    <div class="footertoptitle">당첨자 발표</div>
+                    <p>[제휴] 교보문고×대한항공 '올봄, 독서가 온다' 당첨자 발표</p>
+                    <span>더보기+</span>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+    </footer>
+
+
+    <script></script>
 </body>
 
 </html>
