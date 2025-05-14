@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./css/common.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
     <script src="./java/common.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 </head>
 
 <body>
@@ -224,10 +226,85 @@
         </div>
         <hr>
 
+        <div class="wrap">
+            <div class="footerdown">
+                <div class="footerdown-left">
+                    <div><img src="./img/logo_book.svg" alt="logoimg"></div>
+                    <ul class="underlogo">
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">청소년보호정책</a></li>
+                        <li><a href="#">대량주문안내</a></li>
+                        <li><a href="#">협력사여러분</a></li>
+                        <li><a href="#">채용정보</a></li>
+                        <li><a href="#">광고소개</a></li>
+                    </ul>
+
+                    <ul class="under-underlogo">
+                        <li>대표이사: 허정도</li>
+                        <li>서울특별시 종로구 종로1</li>
+                        <li>사업자등록번호: 102-81-11670</li>
+                    </ul>
+                    <ul class="under-underlogo">
+                        <li><b>대표전화: 1544-1900(발신자 부담전화</b></li>
+                        <li>FAX : 0502-987-5711(지역번호 공통)</li>
+                        <li>서울특별시 통신판매업신고번호 : 제 653호</li>
+                        <li><button>사업자정보확인</button></li>
+                    </ul>
+
+                    <span>© KYOBO BOOK CENTRE</span>
+                </div>
+                <div class="footerdown-right">
+                    <div class="footerdown-right-top">
+                        <select name="familysite" id="select-ftr-right">
+                            <option value="" disabled selected hidden>  Family Site</option>
+                            <option value="one"><a href="#">교보생명</a></option>
+                            <option value="two"><a href="#">교보증권</a></option>
+                            <option value="trd"><a href="#">교보DTS</a></option>
+                            <option value="fr"><a href="#">교보리얼코</a></option>
+                            <option value="five"><a href="#">교보악사자산운용</a></option>
+                            <option value="six"><a href="#">교보라이프플래닛생명</a></option>
+                            <option value="svn"><a href="#">KCA 손해사정</a></option>
+                            <option value="egt"><a href="#">KCA 서비스</a></option>
+                            <option value="nine"><a href="#">교보자산신탁주식회사</a></option>
+                            <option value="ten"><a href="#">대산문화재단</a></option>
+                            <option value="ele"><a href="#">교보교육재단</a></option>
+                            <option value="tle"><a href="#">대산농촌재단</a></option>
+                        </select>
+                        <div class="footericon">
+                            <img src="./img/footericon1.png" alt="footericon1">
+                            <img src="./img/footericon2.png" alt="footericon2">
+                            <img src="./img/footericon3.png" alt="footericon3">
+                        </div>
+                    </div>
+
+                    <ul class="one">
+                        <li><span>토스페이먼츠 구매안전서비스</span></li>
+                        <li><button>서비스가입확인</button></li>
+                    </ul>
+                    <p>고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한
+                        토스페이먼츠의 구매안전서비스를 이용하실 수 있습니다.</p>
+                    <ul class="two">
+                        <li><img src="./img/footerisms_logo.png" alt="ismslogo"></li>
+                        <li>정보보호관리체계<br>ISMS 인증획득</li>
+                        <li>[인증범위] 인터넷 교보문고 및 브랜드 <br>서비스 운영 <br>
+                            [유효기간] 2023.11.15 ~ 2026.11.14</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
 
-
-    <script></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });</script>
 </body>
 
 </html>
