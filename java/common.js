@@ -36,12 +36,8 @@ $.ajax({
 // bookslide
 
 const queries = [
-  { query: "개정판", targetId: "#book1" },
-  { query: "심리학", targetId: "#book2" },
-  { query: "요즘", targetId: "#book3" },
-  { query: "여행", targetId: "#book4" },
-  { query: "바다", targetId: "#book5" },
-  { query: "교양", targetId: "#book6" }
+  { query: "여행", targetId: "#book1 .swiper-wrapper" },
+
 ];
 
 queries.forEach((item) => {
@@ -59,33 +55,152 @@ queries.forEach((item) => {
     const data = msg.documents.filter(val => val.thumbnail && val.contents);
 
     data.forEach(book => {
-      const temp = `
+      const temp = `      
+          <div class="swiper-slide">
+            <div class="book">
+              <img src="${book.thumbnail}" alt="${book.title}" />
+              <strong>${book.title}</strong>
+            </div>
+          </div>`;
+      $(item.targetId).append(temp);
+    });
+  });
+});
 
-        <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
-      <div class="swiper-slide">Slide 6</div>
-      <div class="swiper-slide">Slide 7</div>
-      <div class="swiper-slide">Slide 8</div>
-      <div class="swiper-slide">Slide 9</div>
-    </div>
-    <div class="swiper-pagination"></div>
-  </div>
-        <div class="book">
-          <img src="${book.thumbnail}" alt="${book.title}" />
-          <strong>${book.title}</strong>
-        </div>`;
+// bookslide2 사람들이 많이 찾고있어요
+
+const queries2 = [
+  { query: "주식", targetId: "#bookmanylist .swiper-wrapper" },
+];
+
+queries2.forEach((item) => {
+  $.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: {
+      query: item.query,
+      size: 12
+    },
+    headers: {
+      Authorization: "KakaoAK dea026a9cd34d89b629fd0115d3565b7"
+    }
+  }).done(function (msg) {
+    const data = msg.documents.filter(val => val.thumbnail && val.contents);
+
+    data.forEach(book => {
+      const temp = `      
+          <div class="swiper-slide">
+            <div class="book">
+              <img src="${book.thumbnail}" alt="${book.title}" />
+              <strong>${book.title}</strong>
+            </div>
+          </div>`;
+      $(item.targetId).append(temp);
+    });
+  });
+});
+
+// bookslide3 교보문고가 만들었어요
+
+const queries3 = [
+  { query: "뭔데", targetId: "#bookmadelist .swiper-wrapper" },
+];
+
+queries3.forEach((item) => {
+  $.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: {
+      query: item.query,
+      size: 12
+    },
+    headers: {
+      Authorization: "KakaoAK dea026a9cd34d89b629fd0115d3565b7"
+    }
+  }).done(function (msg) {
+    const data = msg.documents.filter(val => val.thumbnail && val.contents);
+
+    data.forEach(book => {
+      const temp = `      
+          <div class="swiper-slide">
+            <div class="book">
+              <img src="${book.thumbnail}" alt="${book.title}" />
+              <strong>${book.title}</strong>
+            </div>
+          </div>`;
+      $(item.targetId).append(temp);
+    });
+  });
+});
+
+// bookslide4
+
+const queries4 = [
+  { query: "출판", targetId: "#bookpodlist .swiper-wrapper" },
+];
+
+queries4.forEach((item) => {
+  $.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: {
+      query: item.query,
+      size: 12
+    },
+    headers: {
+      Authorization: "KakaoAK dea026a9cd34d89b629fd0115d3565b7"
+    }
+  }).done(function (msg) {
+    const data = msg.documents.filter(val => val.thumbnail && val.contents);
+
+    data.forEach(book => {
+      const temp = `      
+          <div class="swiper-slide">
+            <div class="book">
+              <img src="${book.thumbnail}" alt="${book.title}" />
+              <strong>${book.title}</strong>
+            </div>
+          </div>`;
+      $(item.targetId).append(temp);
+    });
+  });
+});
+
+// book MD, 본상품이랑 비슷 슬라이더 아님
+
+const queriesMD = [
+  { query: "개정판", targetId: "#bookmdlist" },
+  { query: "심리학", targetId: "#booksimilarlist" },
+
+];
+
+queriesMD.forEach((item) => {
+  $.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: {
+      query: item.query,
+      size:6
+    },
+    headers: {
+      Authorization: "KakaoAK dea026a9cd34d89b629fd0115d3565b7"
+    }
+  }).done(function (msg) {
+    const data = msg.documents.filter(val => val.thumbnail && val.contents);
+
+    data.forEach(book => {
+      const temp = `      
+            <div class="book">
+              <img src="${book.thumbnail}" alt="${book.title}" />
+              <strong>${book.title}</strong>
+            </div>`;
       $(item.targetId).append(temp);
     });
   });
 });
 
 //bookbest
-const queries2 = [
+const queriesbest = [
   { query: "한강", targetId: "#bookbest1" },
   { query: "한강", targetId: "#bookbest2" },
   { query: "한강", targetId: "#bookbest3" },
@@ -95,7 +210,7 @@ const queries2 = [
   { query: "한강", targetId: "#bookbest7" },
 ];
 
-queries2.forEach((item) => {
+queriesbest.forEach((item) => {
   $.ajax({
     method: "GET",
     url: "https://dapi.kakao.com/v3/search/book?target=title",

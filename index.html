@@ -99,32 +99,41 @@
                 <div class="scentarray"></div>
             </div>
         </div>
+
+
+
         <div class="bookslide">
             <h2>출판사에서 자신있게 추천해요</h2>
-            <div class="book-wrapper">
-                <div class="bookarray" id="book1"></div>
+
+            <div class="swiper mySwiper" id="book1">
+                <div class="swiper-wrapper"></div>
+                <div class="swiper-pagination"></div>
             </div>
+            <div class="swiper-button-next swiper-button-next0"></div>
+            <div class="swiper-button-prev swiper-button-prev0"></div>
+
         </div>
 
         <div class="AD">
             <img src="./img/bannerad3.png" alt="ad3">
             <img src="./img/bannerad4.png" alt="ad4">
         </div>
-
+        <!-- 슬라이더 아닌 -->
         <div class="bookslide">
             <h2>MD들이 신중하게 골랐어요</h2>
             <div class="book-wrapper">
-                <div class="bookarray" id="book2"></div>
+                <div class="bookarray" id="bookmdlist"></div>
             </div>
+
         </div>
 
         <div class="bookslide">
             <h2>방금 본 상품과 비슷한 상품이에요</h2>
             <div class="book-wrapper">
-                <div class="bookarray" id="book3"></div>
+                <div class="bookarray" id="booksimilarlist"></div>
             </div>
         </div>
-
+        <!--  -->
         <div class="ai">
             <div class="aitext">
                 <a href="#">더보기 +</a>
@@ -164,9 +173,13 @@
 
         <div class="bookslide">
             <h2>사람들이 많이 찾고 있어요</h2>
-            <div class="book-wrapper">
-                <div class="bookarray" id="book4"></div>
+            <div class="swiper mySwiper1" id="bookmanylist">
+                <div class="swiper-wrapper"></div>
+                <div class="swiper-pagination"></div>
             </div>
+            <div class="swiper-button-next swiper-button-next1"></div>
+            <div class="swiper-button-prev swiper-button-prev1"></div>
+
         </div>
 
         <div class="zoomslide">
@@ -179,16 +192,23 @@
 
         <div class="bookslide">
             <h2>교보문고가 만들었어요</h2>
-            <div class="book-wrapper">
-                <div class="bookarray" id="book5"></div>
+            <div class="swiper mySwiper2" id="bookmadelist">
+                <div class="swiper-wrapper"></div>
+                <div class="swiper-pagination"></div>
             </div>
+            <div class="swiper-button-next swiper-button-next2"></div>
+            <div class="swiper-button-prev swiper-button-prev2"></div>
+
         </div>
 
         <div class="bookslide">
             <h2>바로출판POD</h2>
-            <div class="book-wrapper">
-                <div class="bookarray" id="book6"></div>
+            <div class="swiper mySwiper3" id="bookpodlist">
+                <div class="swiper-wrapper"></div>
+                <div class="swiper-pagination"></div>
             </div>
+            <div class="swiper-button-next swiper-button-next3"></div>
+            <div class="swiper-button-prev swiper-button-prev3"></div>
         </div>
 
         <div class="casting">
@@ -197,14 +217,43 @@
         </div>
 
         <div class="event">
-            <h2>이벤트의 정성이 달라요</h2>
-            <ul id="evnttab">
-                <li id="eventtab_menu1">교보문고</li>
-                <li id="eventtab_menu2">eBook</li>
-                <li id="eventtab_menu3">핫트랙스</li>
-            </ul>
-            <a href="#">더보기 +</a>
+            
+            <div class="eventlist"><h2>이벤트의 정성이 달라요</h2>
+                <ul id="evnttab">
+                    <li id="eventtab_menu1">교보문고</li>
+                    <li id="eventtab_menu2">eBook</li>
+                    <li id="eventtab_menu3">핫트랙스</li>
+                </ul>
+                <a href="#">더보기 +</a>
+            </div>
+
+            <div class="swiper mySwiperevent" id="bookpodlist">
+                <div class="swiper-wrapper">
+                    <!-- <div class="swiper-slide"><img src="./img/event1.jpg" alt="event1"></div> -->
+
+                    <div class="swiper-slide"><img src="./img/event2-1.jpg" alt="event2-1"></div>
+                    <div class="swiper-slide"><img src="./img/event2-2.jpg" alt="event1"></div>
+                    <div class="swiper-slide"><img src="./img/event2-3.jpg" alt="event1"></div>
+                    <div class="swiper-slide"><img src="./img/event2-4.jpg" alt="event1"></div>
+                    <div class="swiper-slide"><img src="./img/event2-5.png" alt="event1"></div>
+                    <div class="swiper-slide"><img src="./img/event2-6.jpg" alt="event1"></div>
+
+                    <div class="swiper-slide"><img src="./img/event3-1.jpg" alt="event1"></div>
+                    <div class="swiper-slide"><img src="./img/event3-2.jpg" alt="event1"></div>
+                    <div class="swiper-slide"><img src="./img/event3-3.jpg" alt="event1"></div>
+                    <div class="swiper-slide"><img src="./img/event3-4.jpg" alt="event1"></div>
+                    <div class="swiper-slide"><img src="./img/event3-5.jpg" alt="event1"></div>
+                    <div class="swiper-slide"><img src="./img/event3-6.jpg" alt="event1"></div>
+
+                </div>
+
+            </div>
+            <div class="swiper-button-next swiper-button-next-event"></div>
+            <div class="swiper-button-prev swiper-button-prev-event"></div>
+
         </div>
+
+    </div>
     </div>
     <!-- 푸터 -->
     <footer>
@@ -258,7 +307,7 @@
                 <div class="footerdown-right">
                     <div class="footerdown-right-top">
                         <select name="familysite" id="select-ftr-right">
-                            <option value="" disabled selected hidden>  Family Site</option>
+                            <option value="" disabled selected hidden> Family Site</option>
                             <option value="one"><a href="#">교보생명</a></option>
                             <option value="two"><a href="#">교보증권</a></option>
                             <option value="trd"><a href="#">교보DTS</a></option>
@@ -296,15 +345,77 @@
         </div>
     </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 3,
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });</script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 6,
+            spaceBetween: 30,
+            slidesPerGroup: 6,
+            speed: 700,
+            navigation: {
+                nextEl: ".swiper-button-next0",
+                prevEl: ".swiper-button-prev0",
+            },
+        });
+
+        var swiper1 = new Swiper(".mySwiper1", {
+            slidesPerView: 6,
+            spaceBetween: 30,
+            slidesPerGroup: 6,
+            speed: 700,
+            navigation: {
+                nextEl: ".swiper-button-next1",
+                prevEl: ".swiper-button-prev1",
+            },
+        });
+
+        var swiper2 = new Swiper(".mySwiper2", {
+            slidesPerView: 6,
+            spaceBetween: 30,
+            slidesPerGroup: 6,
+            speed: 700,
+            navigation: {
+                nextEl: ".swiper-button-next2",
+                prevEl: ".swiper-button-prev2",
+            },
+        });
+
+        var swiper3 = new Swiper(".mySwiper3", {
+            slidesPerView: 6,
+            spaceBetween: 30,
+            slidesPerGroup: 6,
+            speed: 700,
+            navigation: {
+                nextEl: ".swiper-button-next3",
+                prevEl: ".swiper-button-prev3",
+            },
+        });
+
+        var swiper4 = new Swiper(".mySwiper4", {
+            slidesPerView: 6,
+            spaceBetween: 30,
+            slidesPerGroup: 6,
+            speed: 700,
+            navigation: {
+                nextEl: ".swiper-button-next4",
+                prevEl: ".swiper-button-prev4",
+            },
+        });
+
+        var swiperevent = new Swiper(".mySwiperevent", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            slidesPerGroup: 3,
+            speed: 700,
+            navigation: {
+                nextEl: ".swiper-button-next-event",
+                prevEl: ".swiper-button-prev-event",
+            },
+        });
+
+
+    </script>
 </body>
 
 </html>

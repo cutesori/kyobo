@@ -21,7 +21,8 @@ html {
 }
 
 .wrap {
-  width: 1200px;
+  width: 1260px;
+  padding: 0 30px;
   margin: 0 auto;
 }
 
@@ -132,29 +133,98 @@ nav {
   background-color: antiquewhite;
   box-sizing: border-box;
   margin-bottom: 80px;
+  position: relative;
 }
 .bookslide h2 {
   margin-bottom: 20px;
 }
-.bookslide .book-wrapper {
-  overflow: hidden;
+.bookslide .swiper-button-prev,
+.bookslide .swiper-button-next {
+  background-color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid #6b6b6b;
+  z-index: 100;
 }
-.bookslide .bookarray {
-  display: flex;
-  gap: 24px;
+.bookslide .swiper-button-prev:after,
+.bookslide .swiper-button-next:after {
+  font-size: 1.2rem;
+  color: #6b6b6b;
+}
+.bookslide .book-wrapper {
   width: 100%;
 }
-.bookslide .bookarray div {
+.bookslide .book-wrapper .bookarray {
+  display: flex;
+  justify-content: space-between;
+}
+.bookslide .book-wrapper .bookarray div {
+  flex: 0 0 auto;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.bookslide .book-wrapper .bookarray img {
+  width: 180px;
+  height: 260px;
+}
+.bookslide .book-wrapper .bookarray strong {
+  margin-top: 10px;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.bookslide .swiper-button-next {
+  margin-right: -80px;
+}
+.bookslide .swiper-button-prev {
+  margin-left: -80px;
+}
+
+.mySwiperevent {
+  width: 100%;
+}
+.mySwiperevent .swiper-slide img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.event {
+  position: relative;
+}
+.event .swiper-button-prev,
+.event .swiper-button-next {
+  background-color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid #6b6b6b;
+  z-index: 100;
+}
+.event .swiper-button-prev:after,
+.event .swiper-button-next:after {
+  font-size: 1.2rem;
+  color: #6b6b6b;
+}
+.event .swiper-button-next {
+  margin-right: -80px;
+}
+.event .swiper-button-prev {
+  margin-left: -80px;
+}
+
+.swiper-slide .book div {
   flex: 0 0 auto;
   width: 180px;
   display: flex;
   flex-direction: column;
 }
-.bookslide .bookarray img {
+.swiper-slide .book img {
   width: 180px;
   height: 260px;
 }
-.bookslide .bookarray strong {
+.swiper-slide .book strong {
   margin-top: 10px;
   font-size: 1.3rem;
   font-weight: 500;
@@ -267,6 +337,20 @@ nav {
   height: 224px;
   margin-bottom: 80px;
   background-color: antiquewhite;
+}
+.event .eventlist {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.event .eventlist #evnttab {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.event .eventlist #evnttab li {
+  padding: 0 10px;
+  cursor: pointer;
 }
 
 footer {
