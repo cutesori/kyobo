@@ -9,7 +9,6 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
     <script src="./java/common.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
 </head>
 
 <body>
@@ -31,15 +30,68 @@
             </div>
 
             <nav>
-                <div class="logo"><a href="#"><img src="./img/logo_book.svg" alt="logoimg"></a></div>
-                <section class="search"><input type="text" placeholder="매일 퀴즈풀고 선물받자!&lt;&lt;굡QUIZ?&gt;&gt;YES!">
-                </section>
+                <div class="both0">
+                    <div class="logo">
+                        <a href="#">
+                            <img src="./img/logo_book.svg" alt="logoimg">
+                        </a>
+                    </div>
+
+                    <section class="search">
+                        <input type="text" placeholder="매일 퀴즈풀고 선물받자!&lt;&lt;굡QUIZ?&gt;&gt;YES!">
+                    </section>
+
+                </div>
+
+                <div class="both">
+                    <div class="crt"><img src="./img/carticon.JPG" alt="cart"></div>
+                    <div class="profile"><img src="./img/personicon.JPG" alt="profile"></div>
+                </div>
             </nav>
 
         </header>
         <div class="slidewrap">
-            <div class="slide"></div>
-            <div class="minislide"></div>
+            <div class="slide">
+                <div class="swiper automySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./img/slide1.jpg" alt="slide1"></div>
+                        <div class="swiper-slide"><img src="./img/slide2.jpg" alt="slide2"></div>
+                        <div class="swiper-slide"><img src="./img/slide3.jpg" alt="slide3"></div>
+                        <div class="swiper-slide"><img src="./img/slide4.jpg" alt="slide4"></div>
+                        <div class="swiper-slide"><img src="./img/slide5.jpg" alt="slide5"></div>
+                        <div class="swiper-slide"><img src="./img/slide6.jpg" alt="slide6"></div>
+                        <div class="swiper-slide"><img src="./img/slide7.jpg" alt="slide7"></div>
+                        <div class="swiper-slide"><img src="./img/slide8.jpg" alt="slide8"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="minislide">
+                <div class="swiper miniSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="./img/minislide1.jpg" alt="minislide1">
+                            <h2>오늘만 특가<br>베베덕 미니 빗자루세트</h2>
+                            <span>오늘만 이 가격 3,900원!</span>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./img/minislide2.jpg" alt="minislide2">
+                            <h2>오늘만 특가<br>베베덕 미니 빗자루세트</h2>
+                            <span>오늘만 이 가격 3,900원!</span>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./img/minislide3.jpg" alt="minislide3">
+                            <h2>오늘만 특가<br>베베덕 미니 빗자루세트</h2>
+                            <span>오늘만 이 가격 3,900원!</span>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next mini-next"></div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev mini-prev"></div>
+                </div>
+            </div>
         </div>
         <div class="iconwrap">
             <ul>
@@ -88,7 +140,26 @@
             </ul>
         </div>
 
-        <div class="book"></div>
+        <!-- 오늘의 선택 슬라이더 -->
+        <div class="bookslide">
+            <h1>오늘의 선택</h1>
+
+            <div class="swiper todayswiper" id="today">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper todayswiper2" id="today2">
+                        <div class="swiper-wrapper inner">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="swiper-button-next swiper-button-next-today"></div>
+            <div class="swiper-button-prev swiper-button-prev-today"></div>
+        </div>
+
+
         <div class="AD">
             <img src="./img/bannerad1.png" alt="ad1">
             <img src="./img/bannerad2.png" alt="ad2">
@@ -217,8 +288,9 @@
         </div>
 
         <div class="event">
-            
-            <div class="eventlist"><h2>이벤트의 정성이 달라요</h2>
+
+            <div class="eventlist">
+                <h2>이벤트의 정성이 달라요</h2>
                 <ul id="evnttab">
                     <li id="eventtab_menu1">교보문고</li>
                     <li id="eventtab_menu2">eBook</li>
@@ -227,7 +299,7 @@
                 <a href="#">더보기 +</a>
             </div>
 
-            <div class="swiper mySwiperevent" id="bookpodlist">
+            <div class="swiper mySwiperevent" id="event">
                 <div class="swiper-wrapper">
                     <!-- <div class="swiper-slide"><img src="./img/event1.jpg" alt="event1"></div> -->
 
@@ -414,7 +486,56 @@
             },
         });
 
+        //맨위 큰 배너 자동 슬라이드
+        var autoswiper = new Swiper(".automySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+                loop: true,
+                effect: 'fade',
+            },
 
+        });
+        // 큰 배너 옆 광고 슬라이드
+        var swiper = new Swiper(".miniSwiper", {
+            navigation: {
+                nextEl: ".mini-next",
+                prevEl: ".mini-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                renderCustom: function (swiper, current, total) {
+                    // 01, 02처럼 앞에 0 붙이기
+                    const formatNumber = (n) => n < 10 ? '0' + n : n;
+                    return `<span>${formatNumber(current)} - ${formatNumber(total)}</span>`;
+                },
+            },
+        });
+
+        // 오늘의 선택 슬라이더
+        var swiperevent = new Swiper(".todayswiper", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            slidesPerGroup: 3,
+            speed: 700,
+            navigation: {
+                nextEl: ".swiper-button-next-today",
+                prevEl: ".swiper-button-prev-today",
+            },
+        });
+
+            var swiperevent = new Swiper(".todayswiper2", {
+            slidesPerView: 6,
+            spaceBetween: 30,
+            speed: 700,
+            navigation: {
+                nextEl: ".swiper-button-next-today",
+                prevEl: ".swiper-button-prev-today",
+            },
+        });
     </script>
 </body>
 

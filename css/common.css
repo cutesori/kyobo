@@ -39,10 +39,33 @@ nav {
   width: 100%;
   background-color: antiquewhite;
   height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .both0 {
+  display: flex;
+  width: 890px;
+  background-color: #6b6b6b;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .profile img {
+  border-radius: 50%;
+  box-shadow: 0 0 10px 0.5px rgb(0, 92, 0);
+}
+nav .both {
+  display: flex;
+  gap: 30px;
+}
+nav .both img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
 }
 
 .search input {
-  width: 680px;
+  width: 560px;
   height: 48px;
   border-radius: 25px;
   border: 1px solid #f2f2f2;
@@ -57,17 +80,74 @@ nav {
   display: none;
 }
 
-.slide {
+.slidewrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.slidewrap .slide {
   width: 890px;
   height: 380px;
-  background-color: aqua;
   margin-bottom: 30px;
+}
+.slidewrap .slide .swiper-slide img {
+  border-radius: 10px;
+}
+.slidewrap .minislide {
+  position: relative;
+  width: 274px;
+  height: 380px;
+  border: rgb(118 118 118/var(--tw-text-opacity, 0.3)) 0.5px solid;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+.slidewrap .minislide .miniSwiper {
+  height: 100%;
+}
+.slidewrap .minislide h2 {
+  line-height: 2.5rem;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+.slidewrap .minislide span {
+  font-size: 1.1rem;
+  color: #6b6b6b;
+  font-weight: 500;
+}
+.slidewrap .minislide .mini-next, .slidewrap .minislide .mini-prev {
+  position: absolute;
+  top: auto;
+  bottom: 30px;
+  width: 20px;
+  height: 20px;
+}
+.slidewrap .minislide .mini-next:after, .slidewrap .minislide .mini-prev:after {
+  font-size: 1rem;
+  color: #121212;
+  font-weight: 600;
+}
+.slidewrap .minislide .mini-next {
+  left: auto;
+  right: 80px;
+}
+.slidewrap .minislide .mini-prev {
+  right: auto;
+  left: 80px;
+}
+.slidewrap .minislide .swiper-pagination {
+  background-color: white;
+  position: absolute;
+}
+.slidewrap .minislide .swiper-pagination-bullet {
+  background-color: white;
+  font-size: 1rem;
 }
 
 .iconwrap {
   width: 100%;
   height: 96px;
-  background-color: antiquewhite;
   margin-bottom: 60px;
 }
 .iconwrap ul {
@@ -96,7 +176,6 @@ nav {
 .scentslide {
   width: 100%;
   height: 300px;
-  background-color: rgb(163, 255, 135);
   box-sizing: border-box;
   margin-bottom: 80px;
 }
@@ -130,7 +209,6 @@ nav {
 .bookslide {
   width: 100%;
   height: 380px;
-  background-color: antiquewhite;
   box-sizing: border-box;
   margin-bottom: 80px;
   position: relative;
@@ -301,7 +379,6 @@ nav {
 }
 
 .numberbest {
-  background-color: #6b6b6b;
   color: white;
   width: 20px;
   height: 20px;
@@ -336,7 +413,6 @@ nav {
   width: 100%;
   height: 224px;
   margin-bottom: 80px;
-  background-color: antiquewhite;
 }
 .event .eventlist {
   display: flex;
