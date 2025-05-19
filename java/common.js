@@ -239,6 +239,69 @@ queriesbest.forEach((item) => {
   });
 });
 
+// ai 추천 파트
+
+const queriesAI = [
+  { query: "개정판", targetId: "#bookAIlist" }
+];
+
+queriesAI.forEach((item) => {
+  $.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: {
+      query: item.query,
+      size:4
+    },
+    headers: {
+      Authorization: "KakaoAK dea026a9cd34d89b629fd0115d3565b7"
+    }
+  }).done(function (msg) {
+    const data = msg.documents.filter(val => val.thumbnail && val.contents);
+
+    data.forEach(book => {
+      const temp = `      
+            <div class="book">
+              <img src="${book.thumbnail}" alt="${book.title}" />
+              <strong>${book.title}</strong>
+            </div>`;
+      $(item.targetId).append(temp);
+    });
+  });
+});
+
+// ai 추천 파트
+
+const queriescast = [
+  { query: "개정판", targetId: "#bookCastlist" }
+];
+
+queriescast.forEach((item) => {
+  $.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: {
+      query: item.query,
+      size:15
+    },
+    headers: {
+      Authorization: "KakaoAK dea026a9cd34d89b629fd0115d3565b7"
+    }
+  }).done(function (msg) {
+    const data = msg.documents.filter(val => val.thumbnail && val.contents);
+
+    data.forEach(book => {
+      const temp = `      
+            <div class="book">
+              <img src="${book.thumbnail}" alt="${book.title}" />
+              <strong>${book.title}</strong>
+            </div>`;
+      $(item.targetId).append(temp);
+    });
+  });
+});
+
+
 // 오늘의 선택 슬라이더
 
 const queriestoday = [

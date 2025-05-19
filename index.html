@@ -207,10 +207,26 @@
         <!--  -->
         <div class="ai">
             <div class="aitext">
-                <a href="#">더보기 +</a>
+
+                <div class="aitext1">
+                    <div class="aitext2">
+                        <h2>AI 추천</h2>
+                        <h1>Picks</h1>
+                    </div>
+
+                    <a href="#">더보기 +</a>
+                </div>
+
+
+                <p>
+                    발견의 기쁨을 선물합니다.<br>
+                    취향을 분석해 꼭 맞는 책을
+                    추천해 드릴게요!</p>
                 <button>로그인하고 더 많은 추천 받기</button>
             </div>
-            <div class="aibook"></div>
+            <div class="aibook">
+                <div class="bookarray" id="bookAIlist"></div>
+            </div>
         </div>
 
         <div class="besttab">
@@ -253,10 +269,6 @@
 
         </div>
 
-        <div class="zoomslide">
-            <h2>교보문고에서만 만날 수 있어요</h2>
-        </div>
-
         <div class="AD">
             <img src="./img/banner_long1.jpg" alt="longad">
         </div>
@@ -284,7 +296,7 @@
 
         <div class="casting">
             <h2>CASTing</h2>
-
+            <div class="bookarray" id="bookCastlist"></div>
         </div>
 
         <div class="event">
@@ -527,7 +539,7 @@
             },
         });
 
-            var swiperevent = new Swiper(".todayswiper2", {
+        var swiperevent = new Swiper(".todayswiper2", {
             slidesPerView: 6,
             spaceBetween: 30,
             speed: 700,

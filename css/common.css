@@ -268,6 +268,103 @@ nav .both img {
   border-radius: 10px;
 }
 
+.ai {
+  display: flex;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 80px;
+  background-color: antiquewhite;
+  justify-content: space-between;
+}
+.ai .aitext {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: aqua;
+  width: 237px;
+}
+.ai .aitext .aitext1 {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.ai .aitext .aitext1 .aitext2 {
+  display: flex;
+  flex-direction: column;
+}
+.ai .aitext .aitext1 .aitext2 h1 {
+  font-size: 3rem;
+}
+.ai .aitext .aitext1 .aitext2 h2 {
+  font-size: 1.8rem;
+  color: rgb(60 154 23/var(--tw-text-opacity, 1));
+}
+.ai .aitext .aitext1 a {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.ai .aitext p {
+  font-size: 1.3rem;
+  color: #6b6b6b;
+}
+.ai .aitext button {
+  border: rgb(80 85 177/var(--tw-text-opacity, 1)) 1px solid;
+  border-radius: 8px;
+  color: rgb(80 85 177/var(--tw-text-opacity, 1));
+  background-color: white;
+  height: 44px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.ai .aibook .bookarray {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  gap: 80px;
+}
+.ai .aibook .bookarray .book {
+  width: 160px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  height: 100%;
+}
+.ai .aibook .bookarray .book img {
+  width: 160px;
+  height: 232px;
+}
+.ai .aibook .bookarray .book strong {
+  font-size: 1.2rem;
+}
+
+.casting .bookarray {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+.casting .bookarray .book {
+  width: 160px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  height: 100%;
+}
+.casting .bookarray .book img {
+  width: 220px;
+  height: 220px;
+}
+.casting .bookarray .book strong {
+  font-size: 1.2rem;
+}
+
 .event {
   position: relative;
 }
@@ -379,6 +476,7 @@ nav .both img {
 }
 
 .numberbest {
+  background-color: #6b6b6b;
   color: white;
   width: 20px;
   height: 20px;
@@ -386,13 +484,6 @@ nav .both img {
   border-radius: 3px;
   font-size: 1rem;
   font-weight: 600;
-}
-
-.ai {
-  width: 100%;
-  height: 200px;
-  margin-bottom: 80px;
-  background-color: antiquewhite;
 }
 
 .zoomslide {
@@ -427,6 +518,15 @@ nav .both img {
 .event .eventlist #evnttab li {
   padding: 0 10px;
   cursor: pointer;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-wrapper {
+  height: 260px;
 }
 
 footer {
