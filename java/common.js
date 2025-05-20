@@ -114,6 +114,9 @@ queries3.forEach((item) => {
       query: item.query,
       size: 12
     },
+
+
+
     headers: {
       Authorization: "KakaoAK dea026a9cd34d89b629fd0115d3565b7"
     }
@@ -322,7 +325,11 @@ queriestoday.forEach((item) => {
   }).done(function (msg) {
     const data = msg.documents.filter(val => val.thumbnail && val.contents);
 
-    data.forEach(book => {
+      data.forEach((book, index) => {
+       var today= book.contents.substring(0,10);
+
+    // data.forEach(book => {
+      
       const temp = `      
           <div class="swiper-slide">
             <div class="book">
@@ -331,14 +338,15 @@ queriestoday.forEach((item) => {
               <strong>${book.title}</strong>
             </div>
           </div>`;
-      $(item.targetId).append(temp);
+      $(item.targetId).append(temp);  
+      
     });
   });
 });
 
 
 const queriestoday2 = [
-  { query: "가", targetId: "#today2 .swiper-wrapper" },
+  { query: "주식", targetId: "#today2 .swiper-wrapper" },
 ];
 
 queriestoday2.forEach((item) => {
@@ -367,3 +375,49 @@ queriestoday2.forEach((item) => {
     });
   });
 });
+
+
+
+// 탭메뉴
+
+      $(document).ready(function(){
+
+        $("#tab_menu1").click(function(){
+
+          $(".tab_list1").show();
+
+          // $(".tab_sub2, .tab_sub3").hide();
+
+          $("#tab_menu1").addClass("active");
+
+          $("#tab_menu2").removeClass("active");
+
+        });
+
+        $("#tab_menu2").click(function(){
+
+          $(".tab_sub2").show();
+
+          $(".tab_sub1, .tab_sub3").hide();
+
+          $("#tab_menu2").addClass("active");
+
+          $("#tab_menu1, #tab_menu3").removeClass("active");
+
+        });
+
+
+$(function(){
+
+$('.toggle_btn').click(function(){
+
+$('.whole').stop().slideToggle('fast');
+
+}) 
+
+
+
+});
+
+
+      });

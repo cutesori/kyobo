@@ -32,6 +32,7 @@ html {
 
 header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
@@ -77,6 +78,29 @@ nav .both img {
 }
 
 .hamburger {
+  width: 100%;
+}
+.hamburger .toggle_btn img {
+  width: 40px;
+  height: 40px;
+  border: #6b6b6b 1px solid;
+  border-radius: 60%;
+}
+
+.active {
+  background-color: #efb300;
+  color: #fff;
+}
+
+.tab_sub1 {
+  display: block;
+}
+
+.tab_sub2 {
+  display: none;
+}
+
+.tab_sub3 {
   display: none;
 }
 
@@ -116,14 +140,16 @@ nav .both img {
   color: #6b6b6b;
   font-weight: 500;
 }
-.slidewrap .minislide .mini-next, .slidewrap .minislide .mini-prev {
+.slidewrap .minislide .mini-next,
+.slidewrap .minislide .mini-prev {
   position: absolute;
   top: auto;
   bottom: 30px;
   width: 20px;
   height: 20px;
 }
-.slidewrap .minislide .mini-next:after, .slidewrap .minislide .mini-prev:after {
+.slidewrap .minislide .mini-next:after,
+.slidewrap .minislide .mini-prev:after {
   font-size: 1rem;
   color: #121212;
   font-weight: 600;
@@ -143,6 +169,19 @@ nav .both img {
 .slidewrap .minislide .swiper-pagination-bullet {
   background-color: white;
   font-size: 1rem;
+}
+
+#today {
+  width: 40%;
+  float: left;
+}
+
+#today2 {
+  width: 60%;
+  float: right;
+}
+#today2 .book {
+  width: 180px;
 }
 
 .iconwrap {
@@ -273,14 +312,12 @@ nav .both img {
   width: 100%;
   height: 300px;
   margin-bottom: 80px;
-  background-color: antiquewhite;
   justify-content: space-between;
 }
 .ai .aitext {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  background-color: aqua;
   width: 237px;
 }
 .ai .aitext .aitext1 {
@@ -341,6 +378,9 @@ nav .both img {
   font-size: 1.2rem;
 }
 
+.casting {
+  display: flex;
+}
 .casting .bookarray {
   display: flex;
   flex-direction: row;
@@ -407,7 +447,6 @@ nav .both img {
 
 .tabmain {
   width: 170px;
-  background-color: aqua;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -445,7 +484,6 @@ nav .both img {
   width: 100%;
   height: 726px;
   margin-bottom: 80px;
-  background-color: antiquewhite;
   display: flex;
   gap: 34px;
   flex-direction: row;
@@ -489,7 +527,6 @@ nav .both img {
 .zoomslide {
   width: 100%;
   height: 200px;
-  background-color: aqua;
   margin-bottom: 80px;
 }
 

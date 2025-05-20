@@ -9,6 +9,9 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
     <script src="./java/common.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -16,16 +19,46 @@
         <img src="./img/top.jpg" alt="topimg">
         <header>
             <div class="hamburger">
-                <ul id="notice">
-                    <li id="tab_menu1">카테고리 전체보기</li>
-                    <li id="tab_menu2">서비스 전체보기</li>
-                </ul>
+                <span class="toggle_btn" title="menu"><img src="./img/hamburger-01.png" alt="hamburgericon"></span>
 
-                <div class="tab_list">
-                    <div class="tab_main1">교보문고</div>
-                    <div class="tab_main2">eBook</div>
-                    <div class="tab_main3">sam</div>
-                    <div class="tab_main4">핫트랙스</div>
+                <div class="whole">
+                    <ul id="notice">
+                        <li id="tab_menu1">카테고리 전체보기</li>
+                        <ul></ul>
+                        <li id="tab_menu2">서비스 전체보기</li>
+                    </ul>
+
+                    <div class="tab_list1">
+                        <div class="tab_main1">교보문고</div>
+                        <div class="tab_main2">eBook</div>
+                        <div class="tab_main3">sam</div>
+                        <div class="tab_main4">핫트랙스</div>
+                    </div>
+
+                    <div class="tablist_main1_sub">
+                        <div>국내도서</div>
+                        <div>서양도서</div>
+                        <div>일본도서</div>
+                        <div>교보Only</div>
+                    </div>
+                    <div class="tablist_main2_sub">
+                        <div>eBook</div>
+                        <div>오디오(북)</div>
+                        <div>동영상</div>
+                    </div>
+                    <div class="tablist_main3_sub">
+                        <div>eBook</div>
+                        <div>오디오(북)</div>
+                        <div>동영상</div>
+                        <div>학술논문</div>
+                    </div>
+                    <div class="tablist_main4_sub">
+                        <div>필기구</div>
+                        <div>디자인문구</div>
+                        <div>미술/오피스</div>
+                        <div>독서용품</div>
+
+                    </div>
                 </div>
             </div>
 
@@ -146,15 +179,14 @@
 
             <div class="swiper todayswiper" id="today">
                 <div class="swiper-wrapper">
-
-                    <div class="swiper todayswiper2" id="today2">
-                        <div class="swiper-wrapper inner">
-                        </div>
-                    </div>
                 </div>
-
-                <div class="swiper-pagination"></div>
             </div>
+
+            <div class="swiper todayswiper2" id="today2">
+                <div class="swiper-wrapper inner">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
             <div class="swiper-button-next swiper-button-next-today"></div>
             <div class="swiper-button-prev swiper-button-prev-today"></div>
         </div>
@@ -529,9 +561,8 @@
 
         // 오늘의 선택 슬라이더
         var swiperevent = new Swiper(".todayswiper", {
-            slidesPerView: 3,
+            slidesPerView: 1,
             spaceBetween: 30,
-            slidesPerGroup: 3,
             speed: 700,
             navigation: {
                 nextEl: ".swiper-button-next-today",
@@ -540,7 +571,7 @@
         });
 
         var swiperevent = new Swiper(".todayswiper2", {
-            slidesPerView: 6,
+            slidesPerView: 3,
             spaceBetween: 30,
             speed: 700,
             navigation: {
