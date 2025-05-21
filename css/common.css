@@ -87,21 +87,119 @@ nav .both img {
   border-radius: 60%;
 }
 
-.active {
-  background-color: #efb300;
-  color: #fff;
+.whole {
+  width: 1200px;
+  height: 685px;
+  border: #121212 1px solid;
+  border-radius: 15px;
+  padding: 30px;
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  background-color: white;
 }
-
-.tab_sub1 {
-  display: block;
+.whole #notice {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 1.2rem;
 }
-
-.tab_sub2 {
+.whole #notice li {
+  width: 50%;
+  height: 30px;
+  background-color: aliceblue;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.whole .main_list {
+  width: 100%;
+  height: 30px;
+  background-color: aqua;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.whole .main_list ul {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.whole .main_list ul li {
+  cursor: pointer;
+}
+.whole .sub_list_wrap {
+  width: 100%;
+  height: 100%;
+  background-color: #6b6b6b;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 30px;
+}
+.whole .sub_list_wrap .westernbook, .whole .sub_list_wrap .japanbook, .whole .sub_list_wrap .kyobobook {
   display: none;
 }
-
-.tab_sub3 {
-  display: none;
+.whole .sub_list_wrap .left_list {
+  width: 20%;
+  height: 80%;
+  background-color: aliceblue;
+}
+.whole .sub_list_wrap .left_list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.whole .sub_list_wrap .left_list ul li {
+  cursor: pointer;
+}
+.whole .sub_list_wrap .center_list {
+  width: 80%;
+  background-color: antiquewhite;
+  height: 80%;
+}
+.whole .sub_list_wrap .center_list .center_list_ul {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.whole .sub_list_wrap .center_list .center_list_ul .center_title {
+  background-color: tomato;
+  width: 70%;
+  font-size: 1.3rem;
+  color: #f2f2f2;
+}
+.whole .sub_list_wrap .center_list .center_list_ul .center_title ul {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 90%;
+  background-color: rgb(82, 105, 124);
+  gap: 20px;
+}
+.whole .sub_list_wrap .center_list .center_list_ul .center_title ul li {
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+.whole .sub_list_wrap .center_list .center_list_ul .center_title2 {
+  background-color: yellow;
+  width: 30%;
+  font-size: 1.3rem;
+  color: #f2f2f2;
+}
+.whole .sub_list_wrap .center_list .center_list_ul .center_title2 ul {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 90%;
+  background-color: rgb(82, 105, 124);
+  gap: 20px;
+}
+.whole .sub_list_wrap .center_list .center_list_ul .center_title2 ul li {
+  cursor: pointer;
+  font-size: 1.1rem;
 }
 
 .slidewrap {

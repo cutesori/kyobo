@@ -3,7 +3,7 @@ $.ajax({
   url: "https://dapi.kakao.com/v3/search/book?target=title",
   data: {
     query: "The Scent of PAGE",
-    size: 12, 
+    size: 12,
     // sort: "accuracy"
   },
   headers: {
@@ -12,24 +12,24 @@ $.ajax({
 })
 
 
-.done(function (msg) {
-  console.log(msg);
+  .done(function (msg) {
+    console.log(msg);
 
-  const origin = msg.documents;
-  let data = origin.filter((val) => {
-    return val.thumbnail !== '' && val.contents !== '';
-  });
+    const origin = msg.documents;
+    let data = origin.filter((val) => {
+      return val.thumbnail !== '' && val.contents !== '';
+    });
 
-  for (var i = 0; i < data.length; i++) {
-    var book = data[i];
-    var temp = `
+    for (var i = 0; i < data.length; i++) {
+      var book = data[i];
+      var temp = `
       <div>
         <img src="${book.thumbnail}" alt="${book.title}" />
         <strong>${book.title}</strong>
       </div>`;
-    $(".scentarray").append(temp);
-  }
-});
+      $(".scentarray").append(temp);
+    }
+  });
 
 
 
@@ -183,7 +183,7 @@ queriesMD.forEach((item) => {
     url: "https://dapi.kakao.com/v3/search/book?target=title",
     data: {
       query: item.query,
-      size:6
+      size: 6
     },
     headers: {
       Authorization: "KakaoAK dea026a9cd34d89b629fd0115d3565b7"
@@ -228,13 +228,13 @@ queriesbest.forEach((item) => {
     const data = msg.documents.filter(val => val.thumbnail && val.contents);
 
     data.forEach((book, index) => {
-       var besttitle= book.title.substring(0,13);
-        // console.log(besttitle)
+      var besttitle = book.title.substring(0, 13);
+      // console.log(besttitle)
 
       const temp = `
         <div class="book2">
           <img src="${book.thumbnail}" alt="${besttitle}" />
-          <div class="numberbest">${index+1}</div>
+          <div class="numberbest">${index + 1}</div>
           <strong>${besttitle}</strong>
         </div>`;
       $(item.targetId).append(temp);
@@ -254,7 +254,7 @@ queriesAI.forEach((item) => {
     url: "https://dapi.kakao.com/v3/search/book?target=title",
     data: {
       query: item.query,
-      size:4
+      size: 4
     },
     headers: {
       Authorization: "KakaoAK dea026a9cd34d89b629fd0115d3565b7"
@@ -285,7 +285,7 @@ queriescast.forEach((item) => {
     url: "https://dapi.kakao.com/v3/search/book?target=title",
     data: {
       query: item.query,
-      size:15
+      size: 15
     },
     headers: {
       Authorization: "KakaoAK dea026a9cd34d89b629fd0115d3565b7"
@@ -325,11 +325,11 @@ queriestoday.forEach((item) => {
   }).done(function (msg) {
     const data = msg.documents.filter(val => val.thumbnail && val.contents);
 
-      data.forEach((book, index) => {
-       var today= book.contents.substring(0,10);
+    data.forEach((book, index) => {
+      var today = book.contents.substring(0, 10);
 
-    // data.forEach(book => {
-      
+      // data.forEach(book => {
+
       const temp = `      
           <div class="swiper-slide">
             <div class="book">
@@ -338,8 +338,8 @@ queriestoday.forEach((item) => {
               <strong>${book.title}</strong>
             </div>
           </div>`;
-      $(item.targetId).append(temp);  
-      
+      $(item.targetId).append(temp);
+
     });
   });
 });
@@ -380,44 +380,69 @@ queriestoday2.forEach((item) => {
 
 // 탭메뉴
 
-      $(document).ready(function(){
+$(document).ready(function () {
 
-        $("#tab_menu1").click(function(){
+  $(".left1").click(function () {
 
-          $(".tab_list1").show();
+    $(".koreabook").show();
 
-          // $(".tab_sub2, .tab_sub3").hide();
+    $(".westernbook, .japanbook, .kyobobook").hide();
 
-          $("#tab_menu1").addClass("active");
+    $(".koreabook").addClass("active");
 
-          $("#tab_menu2").removeClass("active");
+    $(".westernbook, .japanbook, .kyobobook").removeClass("active");
 
-        });
+  });
 
-        $("#tab_menu2").click(function(){
+  $(".left2").click(function () {
 
-          $(".tab_sub2").show();
+    $(".westernbook").show();
 
-          $(".tab_sub1, .tab_sub3").hide();
+    $(".koreabook, .japanbook, .kyobobook").hide();
 
-          $("#tab_menu2").addClass("active");
+    $(".westernbook").addClass("active");
 
-          $("#tab_menu1, #tab_menu3").removeClass("active");
+    $(".koreabook, .japanbook, .kyobobook").removeClass("active");
 
-        });
+  });
+
+  $(".left3").click(function () {
+
+    $(".japanbook").show();
+
+    $(".koreabook, .westernbook, .kyobobook").hide();
+
+    $(".japanbook").addClass("active");
+
+    $(".koreabook, .westrenbook, .kyobobook").removeClass("active");
+
+  });
+
+  $(".left4").click(function () {
+
+    $(".kyobobook").show();
+
+    $(".koreabook, .japanbook, .westernbook").hide();
+
+    $(".kyobobook").addClass("active");
+
+    $(".koreabook, .japanbook, .westernbook").removeClass("active");
+
+  });
 
 
-$(function(){
 
-$('.toggle_btn').click(function(){
+  $(function () {
 
-$('.whole').stop().slideToggle('fast');
+    $('.toggle_btn').click(function () {
 
-}) 
+      $('.whole').stop().fadeToggle('fast');
 
+    })
+
+
+
+  });
 
 
 });
-
-
-      });
