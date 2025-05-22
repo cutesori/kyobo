@@ -77,6 +77,15 @@ nav .both img {
   height: 66px;
 }
 
+.navwrapinham {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navwrapinham li {
+  cursor: pointer;
+}
+
 .hamburger {
   width: 100%;
 }
@@ -87,12 +96,22 @@ nav .both img {
   border-radius: 60%;
 }
 
+.EBOOK,
+.SAM,
+.HOTTRACK {
+  display: none;
+}
+
+.servicetab {
+  display: none;
+}
+
 .whole {
   width: 1200px;
   height: 685px;
   border: #121212 1px solid;
   border-radius: 15px;
-  padding: 30px;
+  overflow: hidden;
   position: absolute;
   z-index: 1000;
   display: none;
@@ -106,18 +125,20 @@ nav .both img {
 }
 .whole #notice li {
   width: 50%;
-  height: 30px;
-  background-color: aliceblue;
+  height: 60px;
   font-size: 1.3rem;
   font-weight: 500;
   cursor: pointer;
+  justify-content: center;
+  align-content: center;
 }
 .whole .main_list {
+  padding: 0 30px;
   width: 100%;
   height: 30px;
-  background-color: aqua;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 500;
+  align-content: center;
 }
 .whole .main_list ul {
   display: flex;
@@ -126,22 +147,27 @@ nav .both img {
 }
 .whole .main_list ul li {
   cursor: pointer;
+  color: #6b6b6b;
+}
+.whole .main_list ul li:hover {
+  color: rgb(34, 137, 255);
 }
 .whole .sub_list_wrap {
+  padding: 0 30px;
   width: 100%;
-  height: 100%;
-  background-color: #6b6b6b;
+  height: 80%;
   display: flex;
   flex-wrap: wrap;
   padding-top: 30px;
 }
-.whole .sub_list_wrap .westernbook, .whole .sub_list_wrap .japanbook, .whole .sub_list_wrap .kyobobook {
+.whole .sub_list_wrap .westernbook,
+.whole .sub_list_wrap .japanbook,
+.whole .sub_list_wrap .kyobobook {
   display: none;
 }
 .whole .sub_list_wrap .left_list {
-  width: 20%;
-  height: 80%;
-  background-color: aliceblue;
+  width: 13%;
+  height: 90%;
 }
 .whole .sub_list_wrap .left_list ul {
   display: flex;
@@ -152,54 +178,86 @@ nav .both img {
 }
 .whole .sub_list_wrap .left_list ul li {
   cursor: pointer;
+  color: #6b6b6b;
+}
+.whole .sub_list_wrap .left_list ul li:hover {
+  color: rgb(34, 137, 255);
 }
 .whole .sub_list_wrap .center_list {
   width: 80%;
-  background-color: antiquewhite;
   height: 80%;
 }
 .whole .sub_list_wrap .center_list .center_list_ul {
   display: flex;
   width: 100%;
   height: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 .whole .sub_list_wrap .center_list .center_list_ul .center_title {
-  background-color: tomato;
-  width: 70%;
+  margin-bottom: 40px;
+  margin-right: 40px;
+  width: 630px;
   font-size: 1.3rem;
-  color: #f2f2f2;
+  color: #000000;
+  font-weight: 600;
 }
 .whole .sub_list_wrap .center_list .center_list_ul .center_title ul {
   padding-top: 20px;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  height: 90%;
-  background-color: rgb(82, 105, 124);
-  gap: 20px;
+  height: 100%;
+  gap: 10px;
 }
 .whole .sub_list_wrap .center_list .center_list_ul .center_title ul li {
   cursor: pointer;
   font-size: 1.1rem;
+  font-weight: 400;
+  color: #6b6b6b;
 }
-.whole .sub_list_wrap .center_list .center_list_ul .center_title2 {
-  background-color: yellow;
-  width: 30%;
-  font-size: 1.3rem;
-  color: #f2f2f2;
-}
-.whole .sub_list_wrap .center_list .center_list_ul .center_title2 ul {
-  padding-top: 20px;
+
+.upnav {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 90%;
-  background-color: rgb(82, 105, 124);
+  align-items: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+.upnav li {
+  font-size: 1.3rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: #6b6b6b;
+}
+
+.smallnavlist {
+  display: flex;
   gap: 20px;
 }
-.whole .sub_list_wrap .center_list .center_list_ul .center_title2 ul li {
+.smallnavlist li {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #6b6b6b;
+}
+
+.center_icon {
+  margin-top: 20px;
+}
+.center_icon ul {
+  display: flex;
+  gap: 20px;
+}
+.center_icon ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70px;
+  height: 70px;
   cursor: pointer;
-  font-size: 1.1rem;
+  background-color: white;
+}
+.center_icon ul li img {
+  width: 70px;
+  height: 70px;
 }
 
 .slidewrap {
