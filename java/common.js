@@ -28,6 +28,7 @@ $.ajax({
         <strong>${book.title}</strong>
       </div>`;
       $(".scentarray").append(temp);
+      
     }
   });
 
@@ -273,10 +274,10 @@ queriesAI.forEach((item) => {
   });
 });
 
-// ai 추천 파트
+// cast 파트
 
 const queriescast = [
-  { query: "개정판", targetId: "#bookCastlist" }
+  { query: "A", targetId: "#cast" }
 ];
 
 queriescast.forEach((item) => {
@@ -285,7 +286,7 @@ queriescast.forEach((item) => {
     url: "https://dapi.kakao.com/v3/search/book?target=title",
     data: {
       query: item.query,
-      size: 15
+      size: 10
     },
     headers: {
       Authorization: "KakaoAK dea026a9cd34d89b629fd0115d3565b7"
@@ -334,11 +335,26 @@ queriestoday.forEach((item) => {
           <div class="swiper-slide">
             <div class="book">
               <img src="${book.thumbnail}" alt="${book.title}" />
-              <p>${book.contents}</p>
+              <div>
               <strong>${book.title}</strong>
+                <p>${book.contents}</p>
+                
+              </div>
+              
             </div>
           </div>`;
       $(item.targetId).append(temp);
+
+      var swiperevent = new Swiper(".todayswiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            speed: 700,
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-next-today",
+                prevEl: ".swiper-button-prev-today",
+            },
+        });
 
     });
   });
@@ -362,16 +378,29 @@ queriestoday2.forEach((item) => {
     }
   }).done(function (msg) {
     const data = msg.documents.filter(val => val.thumbnail && val.contents);
-
+    console.log(data);
     data.forEach(book => {
       const temp = `      
           <div class="swiper-slide">
             <div class="book">
               <img src="${book.thumbnail}" alt="${book.title}" />
-              <strong>${book.title}</strong>
+
             </div>
           </div>`;
       $(item.targetId).append(temp);
+
+      var swiperevent = new Swiper(".todayswiper2", {
+          initialSlide:1,
+            slidesPerView: 3,
+            spaceBetween: 30,
+            speed: 700,
+            loop: true,
+
+            navigation: {
+                nextEl: ".swiper-button-next-today",
+                prevEl: ".swiper-button-prev-today",
+            },
+        });
     });
   });
 });

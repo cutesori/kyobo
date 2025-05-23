@@ -30,6 +30,81 @@ html {
   width: 100%;
 }
 
+.topbanner {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+
+.topnav {
+  width: 100%;
+  height: 42px;
+  margin-top: 0;
+}
+.topnav .above {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.topnav .above .aboveinner {
+  width: 100%;
+}
+.topnav .above .aboveinner .color {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.topnav .above .aboveinner .color .colorone {
+  width: 20%;
+  position: relative;
+}
+.topnav .above .aboveinner .color .colorone svg {
+  height: 100%;
+}
+.topnav .above .aboveinner .color .colortwo {
+  width: 80%;
+}
+.topnav .above .aboveinner .color .colortwo svg {
+  padding-left: 10px;
+  padding-top: 10px;
+  width: 100%;
+  height: 100%;
+}
+.topnav .above .aboveinner .color .colortwo svg g {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+.topnav .above .left {
+  width: 50%;
+  height: 100%;
+}
+.topnav .above .left ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.topnav .above .left ul .line {
+  font-size: 0.5rem;
+}
+.topnav .above .left ul li {
+  font-size: 1rem;
+  line-height: 4rem;
+  cursor: pointer;
+  color: #6b6b6b;
+}
+
+.abovebackcolor {
+  position: absolute;
+  top: 72.5px;
+  right: 0;
+  width: 80%;
+  height: 42px;
+  background-color: #f2f2f2;
+  z-index: -20;
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -38,7 +113,6 @@ header {
 
 nav {
   width: 100%;
-  background-color: antiquewhite;
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -47,7 +121,6 @@ nav {
 nav .both0 {
   display: flex;
   width: 890px;
-  background-color: #6b6b6b;
   justify-content: space-between;
   align-items: center;
 }
@@ -254,6 +327,8 @@ nav .both img {
   height: 70px;
   cursor: pointer;
   background-color: white;
+  font-size: 1rem;
+  font-weight: 400;
 }
 .center_icon ul li img {
   width: 70px;
@@ -328,16 +403,44 @@ nav .both img {
 }
 
 #today {
-  width: 40%;
+  width: 50%;
   float: left;
+}
+#today .swiper-slide {
+  display: flex;
+  align-items: center;
+}
+#today .swiper-slide .book {
+  display: flex;
+  gap: 20px;
+}
+#today .swiper-slide .book div {
+  width: 60%;
+}
+#today .swiper-slide .book div strong {
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
+#today .swiper-slide .book div p {
+  font-size: 1.1rem;
+  color: #6b6b6b;
 }
 
 #today2 {
-  width: 60%;
+  width: 50%;
   float: right;
 }
-#today2 .book {
-  width: 180px;
+#today2 .swiper-slide {
+  display: flex;
+  align-items: center;
+}
+#today2 .swiper-slide .book {
+  width: 135px;
+  height: 195px;
+}
+#today2 .swiper-slide .book img {
+  width: 100%;
+  height: 100%;
 }
 
 .iconwrap {
@@ -534,31 +637,47 @@ nav .both img {
   font-size: 1.2rem;
 }
 
-.casting {
-  display: flex;
+.cast {
+  position: relative;
+  background-color: #757575;
 }
-.casting .bookarray {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
+.cast .swiper-button-prev,
+.cast .swiper-button-next {
+  background-color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid #6b6b6b;
+  z-index: 100;
 }
-.casting .bookarray .book {
-  width: 160px;
-  overflow: hidden;
+.cast .swiper-button-prev:after,
+.cast .swiper-button-next:after {
+  font-size: 1.2rem;
+  color: #6b6b6b;
+}
+.cast .swiper-button-next {
+  margin-right: -80px;
+}
+.cast .swiper-button-prev {
+  margin-left: -80px;
+}
+.cast .swiper-wrapper {
+  background-color: aqua;
+}
+.cast .swiper-wrapper .book div {
+  flex: 0 0 auto;
+  width: 180px;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  justify-content: space-between;
-  height: 100%;
 }
-.casting .bookarray .book img {
-  width: 220px;
-  height: 220px;
+.cast .swiper-wrapper .book img {
+  width: 180px;
+  height: 260px;
 }
-.casting .bookarray .book strong {
-  font-size: 1.2rem;
+.cast .swiper-wrapper .book strong {
+  margin-top: 10px;
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 
 .event {
@@ -683,13 +802,6 @@ nav .both img {
 .zoomslide {
   width: 100%;
   height: 200px;
-  margin-bottom: 80px;
-}
-
-.casting {
-  width: 100%;
-  height: 250px;
-  background-color: aqua;
   margin-bottom: 80px;
 }
 
