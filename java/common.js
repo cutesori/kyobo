@@ -1,3 +1,47 @@
+$(document).ready(function () {
+
+  //맨위 큰 배너 자동 슬라이드
+  var autoswiper = new Swiper(".automySwiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+      loop: true,
+      effect: 'fade',
+    },
+
+  });
+  // 큰 배너 옆 광고 슬라이드
+  var swiper = new Swiper(".miniSwiper", {
+    navigation: {
+      nextEl: ".mini-next",
+      prevEl: ".mini-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      renderCustom: function (swiper, current, total) {
+        // 01, 02처럼 앞에 0 붙이기
+        const formatNumber = (n) => n < 10 ? '0' + n : n;
+        return `<span>${formatNumber(current)} - ${formatNumber(total)}</span>`;
+      },
+    },
+  });
+  // 맨 아래 이벤트의 정성 부분
+  var swiperevent = new Swiper(".mySwiperevent", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    slidesPerGroup: 3,
+    speed: 700,
+    navigation: {
+      nextEl: ".swiper-button-next-event",
+      prevEl: ".swiper-button-prev-event",
+    },
+  });
+});
+
+
 $.ajax({
   method: "GET",
   url: "https://dapi.kakao.com/v3/search/book?target=title",
@@ -28,7 +72,7 @@ $.ajax({
         <strong>${book.title}</strong>
       </div>`;
       $(".scentarray").append(temp);
-      
+
     }
   });
 
@@ -64,6 +108,17 @@ queries.forEach((item) => {
             </div>
           </div>`;
       $(item.targetId).append(temp);
+
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 6,
+        spaceBetween: 30,
+        slidesPerGroup: 6,
+        speed: 700,
+        navigation: {
+          nextEl: ".swiper-button-next0",
+          prevEl: ".swiper-button-prev0",
+        },
+      });
     });
   });
 });
@@ -97,6 +152,17 @@ queries2.forEach((item) => {
             </div>
           </div>`;
       $(item.targetId).append(temp);
+
+      var swiper1 = new Swiper(".mySwiper1", {
+        slidesPerView: 6,
+        spaceBetween: 30,
+        slidesPerGroup: 6,
+        speed: 700,
+        navigation: {
+          nextEl: ".swiper-button-next1",
+          prevEl: ".swiper-button-prev1",
+        },
+      });
     });
   });
 });
@@ -133,6 +199,18 @@ queries3.forEach((item) => {
             </div>
           </div>`;
       $(item.targetId).append(temp);
+
+
+      var swiper2 = new Swiper(".mySwiper2", {
+        slidesPerView: 6,
+        spaceBetween: 30,
+        slidesPerGroup: 6,
+        speed: 700,
+        navigation: {
+          nextEl: ".swiper-button-next2",
+          prevEl: ".swiper-button-prev2",
+        },
+      });
     });
   });
 });
@@ -166,6 +244,17 @@ queries4.forEach((item) => {
             </div>
           </div>`;
       $(item.targetId).append(temp);
+
+      var swiper3 = new Swiper(".mySwiper3", {
+        slidesPerView: 6,
+        spaceBetween: 30,
+        slidesPerGroup: 6,
+        speed: 700,
+        navigation: {
+          nextEl: ".swiper-button-next3",
+          prevEl: ".swiper-button-prev3",
+        },
+      });
     });
   });
 });
@@ -199,6 +288,17 @@ queriesMD.forEach((item) => {
               <strong>${book.title}</strong>
             </div>`;
       $(item.targetId).append(temp);
+
+      var swiper4 = new Swiper(".mySwiper4", {
+        slidesPerView: 6,
+        spaceBetween: 30,
+        slidesPerGroup: 6,
+        speed: 700,
+        navigation: {
+          nextEl: ".swiper-button-next4",
+          prevEl: ".swiper-button-prev4",
+        },
+      });
     });
   });
 });
@@ -301,6 +401,17 @@ queriescast.forEach((item) => {
               <strong>${book.title}</strong>
             </div>`;
       $(item.targetId).append(temp);
+
+      var swiperevent = new Swiper(".mySwipercast", {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        slidesPerGroup: 5,
+        speed: 700,
+        navigation: {
+          nextEl: ".swiper-button-next-cast",
+          prevEl: ".swiper-button-prev-cast",
+        },
+      });
     });
   });
 });
@@ -346,15 +457,15 @@ queriestoday.forEach((item) => {
       $(item.targetId).append(temp);
 
       var swiperevent = new Swiper(".todayswiper", {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            speed: 700,
-            loop: true,
-            navigation: {
-                nextEl: ".swiper-button-next-today",
-                prevEl: ".swiper-button-prev-today",
-            },
-        });
+        slidesPerView: 1,
+        spaceBetween: 30,
+        speed: 700,
+        loop: true,
+        navigation: {
+          nextEl: ".swiper-button-next-today",
+          prevEl: ".swiper-button-prev-today",
+        },
+      });
 
     });
   });
@@ -390,17 +501,17 @@ queriestoday2.forEach((item) => {
       $(item.targetId).append(temp);
 
       var swiperevent = new Swiper(".todayswiper2", {
-          initialSlide:1,
-            slidesPerView: 3,
-            spaceBetween: 30,
-            speed: 700,
-            loop: true,
+        initialSlide: 1,
+        slidesPerView: 3,
+        spaceBetween: 30,
+        speed: 700,
+        loop: true,
 
-            navigation: {
-                nextEl: ".swiper-button-next-today",
-                prevEl: ".swiper-button-prev-today",
-            },
-        });
+        navigation: {
+          nextEl: ".swiper-button-next-today",
+          prevEl: ".swiper-button-prev-today",
+        },
+      });
     });
   });
 });

@@ -409,6 +409,7 @@ nav .both img {
 #today .swiper-slide {
   display: flex;
   align-items: center;
+  padding-top: 50px;
 }
 #today .swiper-slide .book {
   display: flex;
@@ -433,6 +434,7 @@ nav .both img {
 #today2 .swiper-slide {
   display: flex;
   align-items: center;
+  padding-top: 50px;
 }
 #today2 .swiper-slide .book {
   width: 135px;

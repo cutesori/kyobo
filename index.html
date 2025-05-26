@@ -9,7 +9,7 @@
 
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -1504,140 +1504,6 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 6,
-            spaceBetween: 30,
-            slidesPerGroup: 6,
-            speed: 700,
-            navigation: {
-                nextEl: ".swiper-button-next0",
-                prevEl: ".swiper-button-prev0",
-            },
-        });
-
-        var swiper1 = new Swiper(".mySwiper1", {
-            slidesPerView: 6,
-            spaceBetween: 30,
-            slidesPerGroup: 6,
-            speed: 700,
-            navigation: {
-                nextEl: ".swiper-button-next1",
-                prevEl: ".swiper-button-prev1",
-            },
-        });
-
-        var swiper2 = new Swiper(".mySwiper2", {
-            slidesPerView: 6,
-            spaceBetween: 30,
-            slidesPerGroup: 6,
-            speed: 700,
-            navigation: {
-                nextEl: ".swiper-button-next2",
-                prevEl: ".swiper-button-prev2",
-            },
-        });
-
-        var swiper3 = new Swiper(".mySwiper3", {
-            slidesPerView: 6,
-            spaceBetween: 30,
-            slidesPerGroup: 6,
-            speed: 700,
-            navigation: {
-                nextEl: ".swiper-button-next3",
-                prevEl: ".swiper-button-prev3",
-            },
-        });
-
-        var swiper4 = new Swiper(".mySwiper4", {
-            slidesPerView: 6,
-            spaceBetween: 30,
-            slidesPerGroup: 6,
-            speed: 700,
-            navigation: {
-                nextEl: ".swiper-button-next4",
-                prevEl: ".swiper-button-prev4",
-            },
-        });
-
-        var swiperevent = new Swiper(".mySwiperevent", {
-            slidesPerView: 3,
-            spaceBetween: 30,
-            slidesPerGroup: 3,
-            speed: 700,
-            navigation: {
-                nextEl: ".swiper-button-next-event",
-                prevEl: ".swiper-button-prev-event",
-            },
-        });
-        // casting 부분 
-        var swiperevent = new Swiper(".mySwipercast", {
-            slidesPerView: 2,
-            spaceBetween: 30,
-            slidesPerGroup: 5,
-            speed: 700,
-            navigation: {
-                nextEl: ".swiper-button-next-cast",
-                prevEl: ".swiper-button-prev-cast",
-            },
-        });
-
-        //맨위 큰 배너 자동 슬라이드
-        var autoswiper = new Swiper(".automySwiper", {
-            spaceBetween: 30,
-            centeredSlides: true,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-                loop: true,
-                effect: 'fade',
-            },
-
-        });
-        // 큰 배너 옆 광고 슬라이드
-        var swiper = new Swiper(".miniSwiper", {
-            navigation: {
-                nextEl: ".mini-next",
-                prevEl: ".mini-prev",
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-                renderCustom: function (swiper, current, total) {
-                    // 01, 02처럼 앞에 0 붙이기
-                    const formatNumber = (n) => n < 10 ? '0' + n : n;
-                    return `<span>${formatNumber(current)} - ${formatNumber(total)}</span>`;
-                },
-            },
-        });
-
-
-        // 오늘의 선택 슬라이더
-        // var swiperevent = new Swiper(".todayswiper", {
-        //     slidesPerView: 1,
-        //     spaceBetween: 30,
-        //     speed: 700,
-        //     loop: true,
-        //     navigation: {
-        //         nextEl: ".swiper-button-next-today",
-        //         prevEl: ".swiper-button-prev-today",
-        //     },
-        // });
-
-        // var swiperevent = new Swiper(".todayswiper2", {
-        //     slidesPerView: 3,
-        //     spaceBetween: 30,
-        //     speed: 700,
-        //     loop: true,
-
-        //     navigation: {
-        //         nextEl: ".swiper-button-next-today",
-        //         prevEl: ".swiper-button-prev-today",
-        //     },
-        // });
-    </script>
 </body>
 
 </html>
