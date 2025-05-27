@@ -7,8 +7,12 @@
     <title>온라인 일간 베스트</title>
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./java/common.js"></script>
     <script src="./java/sub.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/sub.css">
 </head>
@@ -1216,19 +1220,75 @@
 
                 </div>
                 <div class="bookcard">
-
+                    <h2>북카드</h2>
+                    <!-- Swiper -->
+                    <div class="swiper mySwiperbookcard">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="./subimg/card1.jpg" alt="card"></div>
+                            <div class="swiper-slide"><img src="./subimg/card2.jpg" alt="card"></div>
+                            <div class="swiper-slide"><img src="./subimg/card3.jpg" alt="card"></div>
+                            <div class="swiper-slide"><img src="./subimg/card4.jpg" alt="card"></div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
                 </div>
-                <div class="product"></div>
+                <div class="product">
+                    <h2>함께 구매한 상품</h2>
+                    <div class="swiper mySwiperproduct" id="pro">
+                        <h4>도서</h4>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                        </div>
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+                </div>
 
-                <div class="keyword"></div>
-                <div class="imagepart"></div>
-
+                <div class="life">
+                    <div class="swiper mySwiperlife">
+                        <h4>라이프</h4>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                            <div class="swiper-slide probox"></div>
+                        </div>
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+                </div>
             </div>
+            <div class="keyword"></div>
+            <div class="imagepart">
+                <img src="./subimg/book.jpg" alt="book">
+            </div>
+
         </div>
-        <div class="rightwrap">
-            <div class="found"></div>
-            <div class="thisbest"></div>
-        </div>
+    </div>
+    <div class="rightwrap">
+        <div class="found"></div>
+        <div class="thisbest"></div>
+    </div>
 
     </div>
     <!-- 푸터 -->
@@ -1320,6 +1380,7 @@
             </div>
         </div>
     </footer>
+
 
 </body>
 
