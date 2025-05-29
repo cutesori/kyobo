@@ -1,3 +1,4 @@
+@charset "UTF-8";
 hr {
   border: none;
   height: 1px;
@@ -13,15 +14,58 @@ hr {
   margin-bottom: 20px;
 }
 .booktop .booktop_left {
-  background-color: rgb(252, 182, 170);
   display: flex;
   flex-direction: column;
   width: 520px;
+  height: 100%;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 .booktop .booktop_left .box3D {
-  width: 300px;
-  height: 500px;
+  width: 258px;
+  height: 382px;
   background-color: antiquewhite;
+  margin: 0 auto;
+  position: relative;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.booktop .booktop_left .box3D::before {
+  content: "";
+  width: 30px;
+  height: 100%;
+  position: absolute;
+  background-image: url(../subimg/3D_2.jpg);
+  background-size: cover;
+  background-position: center;
+  transform-origin: left;
+  transform: rotateY(90deg);
+  position: absolute;
+}
+.booktop .booktop_left .box3D::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(../subimg/3D_3.jpg);
+  background-size: cover;
+  background-position: center;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(30px);
+  position: absolute;
+}
+.booktop .booktop_left .box3D:hover {
+  transform: rotateY(40deg);
+}
+.booktop .booktop_left .box3D img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.booktop .booktop_left .box3D.rotate {
+  transform: rotateY(180deg);
 }
 .booktop .booktop_center {
   width: 300px;
@@ -56,6 +100,24 @@ hr {
   padding: 18px;
   flex-direction: column;
   font-size: 1.1rem;
+}
+.booktop .booktop_center .Bc-2 .Bc-2T {
+  font-weight: 600;
+}
+.booktop .booktop_center .Bc-2 .Bc-2t {
+  font-size: 1rem;
+}
+.booktop .booktop_center .Bc-1 {
+  display: flex;
+  justify-content: space-between;
+}
+.booktop .booktop_center .Bc-1 button {
+  width: 65px;
+  height: 20px;
+  background: #fff;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 .booktop .booktop_right {
   width: 330px;
@@ -228,9 +290,6 @@ hr {
 .leftwrap {
   width: 814px;
 }
-.leftwrap .bookintro h2 {
-  font-size: 1.5rem;
-}
 .leftwrap .bookintro h4 {
   font-size: 1.3rem;
   font-weight: 500;
@@ -257,12 +316,84 @@ hr {
   font-size: 1.2rem;
   color: #444;
 }
-.leftwrap #tmpBox2 p, .leftwrap #tmpBox3 p, .leftwrap #tmpBox4 p, .leftwrap #tmpBox5 p {
+.leftwrap #tmpBox2 p,
+.leftwrap #tmpBox3 p,
+.leftwrap #tmpBox4 p,
+.leftwrap #tmpBox5 p {
   font-size: 1.2rem;
   color: #444;
 }
-.leftwrap .Clist, .leftwrap .intothebook, .leftwrap .pub {
+.leftwrap .Clist,
+.leftwrap .intothebook,
+.leftwrap .pub {
   margin-bottom: 40px;
+}
+.leftwrap .author .auwrap {
+  height: 550px;
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 35px 30px;
+}
+.leftwrap .author .auwrap .auwrap_T {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+.leftwrap .author .auwrap .auwrap_T div {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.leftwrap .author .auwrap .auwrap_T div span {
+  font-size: 1.3rem;
+}
+.leftwrap .author .auwrap .auwrap_T div h3 {
+  font-size: 1.4rem;
+}
+.leftwrap .author .auwrap .auwrap_T button {
+  width: 80px;
+  height: 30px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.leftwrap .author .auwrap .auwrap_TT {
+  font-size: 1.1rem;
+  width: 130px;
+  height: 35px;
+  line-height: 2.6rem;
+  text-align: center;
+  background-color: white;
+  border-radius: 13px;
+  color: #444;
+}
+.leftwrap .author .auwrap .auwrap_profile {
+  display: flex;
+  gap: 20px;
+}
+.leftwrap .author .auwrap .auwrap_profile img {
+  width: 100px;
+  border-radius: 50%;
+}
+.leftwrap .author .auwrap #Au {
+  width: 100%;
+}
+.leftwrap .author .auwrap #Au .swiper-scrollbar {
+  bottom: 0px;
+  height: var(--swiper-scrollbar-size, 2px);
+  width: calc(110% - 2 * var(--swiper-scrollbar-sides-offset, 3%));
+  left: var(--swiper-scrollbar-sides-offset, 0%);
+}
+.leftwrap .author .auwrap #Au .swiper-wrapper .aubox img {
+  width: 110px;
+}
+.leftwrap .author .auwrap #Au .swiper-wrapper .aubox h5 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 10px 0;
 }
 .leftwrap .ad {
   width: 100%;
@@ -278,6 +409,109 @@ hr {
   border-radius: 10px;
   width: 257px;
   height: 140px;
+}
+.leftwrap .basic {
+  margin-top: 100px;
+  width: 100%;
+}
+.leftwrap .basic table {
+  padding: 0 10px;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 400;
+  width: 100%;
+  border-top: 1px solid black;
+}
+.leftwrap .basic table tr {
+  height: 50px;
+}
+.leftwrap .basic table th {
+  width: 30%;
+}
+.leftwrap .basic table button {
+  width: 70px;
+  height: 23px;
+  border-radius: 5px;
+  color: #000;
+  background: #fff;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+.leftwrap .review {
+  margin-top: 60px;
+}
+.leftwrap .review .tab-content {
+  display: none;
+}
+.leftwrap .review .tab-content.active {
+  display: block;
+}
+.leftwrap .review .tab-buttons {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+.leftwrap .review .tab-buttons li {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.leftwrap .review .tab-buttons li.active {
+  color: #4dac27;
+  border-bottom: #4dac27 2px solid;
+}
+.leftwrap .review .tabhrr {
+  margin-top: -13px;
+}
+.leftwrap .review .review-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+.leftwrap .review .review-item .review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+  color: #555;
+  justify-content: space-between;
+}
+.leftwrap .review .review-item .review-header .rvwrap {
+  display: flex;
+  width: 25%;
+  justify-content: space-between;
+  align-items: center;
+}
+.leftwrap .review .review-item .review-header .rvwrap .review-id {
+  font-weight: bold;
+  color: #333;
+}
+.leftwrap .review .review-item .review-header .rvwrap .review-date {
+  color: #999;
+  font-size: 1rem;
+}
+.leftwrap .review .review-item .review-header .review-stars {
+  display: inline-block;
+  font-size: 1.1rem;
+  color: #4dac27;
+  /* 골드 색상 */
+}
+.leftwrap .review .review-item .review-header .review-stars::before {
+  content: "★★★★★";
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, #4dac27 var(--rating, 100%), #ccc var(--rating, 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.leftwrap .review .review-item .review-header .review-text {
+  font-size: 1.1rem;
+}
+.leftwrap .downbanner1 {
+  width: 100%;
+  border-radius: 20px;
+  margin: 60px 0;
 }
 
 html,
@@ -573,4 +807,44 @@ h2,
 .title {
   margin-bottom: 20px;
   margin-top: 40px;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+.hidden_box {
+  max-height: 150px;
+  /* 높이 제한 */
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+}
+
+.hidden_box.open {
+  max-height: 1000px;
+  /* 충분히 큰 값 */
+}
+
+.hide_txt {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 14px;
+  padding: 8px 0px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.hide_txt span,
+.hide_txt i {
+  color: #4dac27;
+}
+.hide_txt span:hover {
+  text-decoration: underline;
+}
+
+.hide_txt i {
+  font-size: 12px;
+  transition: transform 0.6s ease;
 }

@@ -8,10 +8,9 @@
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./java/common.js"></script>
-    <script src="./java/sub.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/sub.css">
@@ -1145,7 +1144,10 @@
         <div class="booktop">
             <div class="booktop_left">
 
-                <div class="box3D">d</div>
+                <div class="box3D">
+                    <img src="./subimg/3D_1.jpg" alt="bookcover1">
+
+                </div>
             </div>
 
             <!-- 책 상단 중간 부분 -->
@@ -1166,12 +1168,12 @@
                 <hr>
                 <div class="Bc-1">
                     <span>가장 최근에 출시된 개정판입니다.</span>
-                    <button>구판보기</button>
+                    <button>구판보기 ></button>
                 </div>
 
                 <div class="Bc-2">
-                    <span>리뷰</span>
-                    <span>최고예요</span>
+                    <span class="Bc-2T">한달리뷰</span>
+                    <span class="Bc-2t">내가 여행을 좋아하는 이유, 내가 여행에서 얻고자<br> 하는 것들을 생각하게 됩니다.</span>
                 </div>
 
             </div>
@@ -1373,7 +1375,7 @@
                         <li>></li>
                         <li>한국에세이</li>
                     </ul>
-                    
+
                     <hr>
 
                     <div id="tmpBox"></div>
@@ -1381,26 +1383,305 @@
 
 
                 <div class="author">
-                    <h2>작가 소개</h2>
-                    <div id="tmpbox2"></div>
+                    <h2>작가 정보</h2>
+
+                    <div class="auwrap">
+                        <div class="auwrap_T">
+                            <div>
+                                <span>저자(글)</span>
+                                <h3>김영하</h3>
+                            </div>
+                            <button>ⓘ 인물정보</button>
+                        </div>
+
+                        <span class="auwrap_TT">현대문학가 > 소설가</span>
+
+                        <div class="auwrap_profile">
+                            <img src="./subimg/A1.jpg" alt="a">
+
+                            <div id="tmpBox2"></div>
+                        </div>
+
+
+                        <div class="swiper mySwiperau" id="Au">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide aubox"></div>
+                                <div class="swiper-slide aubox"></div>
+                                <div class="swiper-slide aubox"></div>
+                                <div class="swiper-slide aubox"></div>
+                                <div class="swiper-slide aubox"></div>
+                                <div class="swiper-slide aubox"></div>
+                                <div class="swiper-slide aubox"></div>
+                                <div class="swiper-slide aubox"></div>
+                                <div class="swiper-slide aubox"></div>
+                                <div class="swiper-slide aubox"></div>
+                                <div class="swiper-slide aubox"></div>
+                                <div class="swiper-slide aubox"></div>
+                                <div class="swiper-slide aubox"></div>
+                            </div>
+                            <div class="swiper-scrollbar"></div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="Clist">
                     <h2>목차</h2>
-                    <div id="tmpBox3"></div>
+                    <div id="tmpBox3" class="hidden_box"></div>
+                    <button class="hide_txt">
+                        <span>펼쳐보기</span>
+                        <i class="fa fa-angle-down"></i>
+                    </button>
                 </div>
                 <hr>
                 <div class="intothebook">
                     <h2>책 속으로</h2>
-                    <div id="tmpBox4"></div>
+                    <div id="tmpBox4" class="hidden_box"></div>
+                    <button class="hide_txt">
+                        <span>펼쳐보기</span>
+                        <i class="fa fa-angle-down"></i>
+                    </button>
                 </div>
                 <hr>
                 <div class="pub">
                     <h2>출판사 서평</h2>
-                    <div id="tmpBox5"></div>
+                    <div id="tmpBox5" class="hidden_box"></div>
+                    <button class="hide_txt">
+                        <span>펼쳐보기</span>
+                        <i class="fa fa-angle-down"></i>
+                    </button>
+                </div>
+                <hr>
+                <div class="basic">
+                    <h2>기본정보</h2>
+                    <table>
+                        <tr>
+                            <th>
+                                ISBN
+                            </th>
+                            <td>9791191114591</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                발행(출시)일자
+                            </th>
+                            <td>2024년 04월 17일</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                쪽수
+                            </th>
+                            <td>260쪽</td>
+                        </tr>
+                        <tr>
+                            <th>
+                                크기
+                            </th>
+                            <td>128 * 188 mm <button>판형알림></button></td>
+                        </tr>
+                        <tr>
+                            <th>
+                                총권수
+                            </th>
+                            <td>1권</td>
+                        </tr>
+                    </table>
+                </div>
+                <hr>
+
+                <div class="review">
+                    <h2>생생한 후기</h2>
+                    <div class="review-tabs">
+
+                        <ul class="tab-buttons">
+                            <li class="active" data-tab="all">전체리뷰 (12)</li>
+                            <li data-tab="month">한달리뷰 (4)</li>
+                        </ul>
+                        <hr class="tabhrr">
+
+                        <div class="tab-contents">
+                            <div id="all" class="tab-content active">
+                                <!-- 전체리뷰 12개 -->
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="rvwrap">
+                                            <span class="review-id">readfox91 </span>
+                                            <span class="review-date">2025-05-28</span>
+                                        </div>
+                                        <div class="review-stars" data-rating="4.5"></div>
+                                    </div>
+                                    <p class="review-text">좋은 책입니다. 추천해요!</p>
+                                </div>
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="rvwrap">
+                                            <span class="review-id">paperduck22</span>
+                                            <span class="review-date">2025-05-27</span>
+                                        </div>
+                                        <div class="review-stars" data-rating="5"></div>
+                                    </div>
+                                    <p class="review-text">정말 재미있게 읽었습니다.
+
+                                    </p>
+                                </div>
+                                <!-- ... 10개 리뷰 더 넣기 (아래 예시처럼 복제) -->
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="rvwrap">
+                                            <span class="review-id">bookie77</span>
+                                            <span class="review-date">2025-05-26</span>
+                                        </div>
+
+                                        <div class="review-stars" data-rating="3.5"></div>
+                                    </div>
+                                    <p class="review-text">생각보다 평범했어요.책상태가 엉망은 아니지만, 뭔가 기분은 좋지 않네요.
+                                        사진처럼 더럽게된 부분이 여러군데 있는데 그냥 택배로 발송해버렸어요.
+                                        택배로 배송하는건 정말 불가피한경우 빼고는 하지말아야겠어요</p>
+                                </div>
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="rvwrap">
+                                            <span class="review-id">cloudpen03</span>
+                                            <span class="review-date">2025-05-25</span>
+                                        </div>
+                                        <div class="review-stars" data-rating="4"></div>
+                                    </div>
+                                    <p class="review-text">배울 점이 많았습니다.</p>
+                                </div>
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="rvwrap">
+                                            <span class="review-id">mintreader88</span>
+                                            <span class="review-date">2025-05-24</span>
+                                        </div>
+                                        <div class="review-stars" data-rating="4.5"></div>
+                                    </div>
+                                    <p class="review-text">다시 읽고 싶어요!역시 김영하 작가님의 글이라
+                                        읽으면서 힐링되는 느낌이에요</p>
+                                </div>
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="rvwrap">
+                                            <span class="review-id">storycat19</span>
+                                            <span class="review-date">2025-05-23</span>
+                                        </div>
+                                        <div class="review-stars" data-rating="2.5"></div>
+                                    </div>
+                                    <p class="review-text">조금 지루했습니다.</p>
+                                </div>
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="rvwrap">
+                                            <span class="review-id">leafink56</span>
+                                            <span class="review-date">2025-05-22</span>
+                                        </div>
+                                        <div class="review-stars" data-rating="5"></div>
+                                    </div>
+                                    <p class="review-text">훌륭한 작품입니다!
+                                        기차 여행을 하며 읽으니 더욱 재미있고 쉽게 읽은 책입니다. 작가 개인의 경험한 여행의 의미를 확장하며 여행자의 눈으로 세상을 톺아보는 시간을
+                                        가질 수 있었어요.
+
+                                    </p>
+                                </div>
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="rvwrap">
+                                            <span class="review-id">pagebear12</span>
+                                            <span class="review-date">2025-05-21</span>
+                                        </div>
+                                        <div class="review-stars" data-rating="4"></div>
+                                    </div>
+                                    <p class="review-text">읽고 싶었던책.</p>
+                                </div>
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="rvwrap">
+                                            <span class="review-id">sunlight08</span>
+                                            <span class="review-date">2025-05-20</span>
+                                        </div>
+                                        <div class="review-stars" data-rating="3"></div>
+                                    </div>
+                                    <p class="review-text">뉴욕 여행을 다녀온 이후 읽었는데 여행을 여러 관점에서 바라본 저자의 시각이 참신했습니다</p>
+                                </div>
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="rvwrap">
+                                            <span class="review-id">windbook45</span>
+                                            <span class="review-date">2025-05-19</span>
+                                        </div>
+                                        <div class="review-stars" data-rating="4.5"></div>
+                                    </div>
+                                    <p class="review-text">다음 편이 기대돼요.</p>
+                                </div>
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="rvwrap">
+                                            <span class="review-id">chapterbee31</span>
+                                            <span class="review-date">2025-05-18</span>
+                                        </div>
+                                        <div class="review-stars" data-rating="5"></div>
+                                    </div>
+                                    <p class="review-text">완전 추천합니다!</p>
+                                </div>
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="rvwrap">
+                                            <span class="review-id">moonquill99</span>
+                                            <span class="review-date">2025-05-17</span>
+                                        </div>
+                                        <div class="review-stars" data-rating="4"></div>
+                                    </div>
+                                    <p class="review-text">읽기 쉬웠어요.</p>
+                                </div>
+                            </div>
+
+                            <div id="month" class="tab-content">
+                                <!-- 한달리뷰 4개 -->
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="rvwrap">
+                                            <span class="review-id">bookmint24</span>
+                                            <span class="review-date">2025-05-15</span>
+                                        </div>
+                                        <div class="review-stars" data-rating="5"></div>
+                                    </div>
+                                    <p class="review-text">최근에 읽은 책 중 최고!</p>
+                                </div>
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="rvwrap">
+                                            <span class="review-id">silentowl07</span>
+                                            <span class="review-date">2025-05-10</span>
+                                        </div>
+                                        <div class="review-stars" data-rating="5"></div>
+                                    </div>
+                                    <p class="review-text">이 책은 단순히 흥미로운 줄거리만 있는 게 아니라, 읽는 내내 스스로에게 질문을 던지게 만드는 깊이 있는 메시지를 담고 있어 인상적이었어요. 처음에는 가볍게 읽을 수 있는 이야기라고 생각했는데, 챕터가 진행될수록 인간관계, 선택, 그리고 삶의 가치에 대해 진지하게 고민하게 만들더라고요. 특히 주인공의 갈등과 성장 과정을 통해 저도 많은 공감을 했고, 마지막 장을 덮었을 때는 마치 한 편의 긴 여행을 끝낸 기분이 들었습니다. 평소 독서를 즐기지 않는 분들에게도 꼭 추천하고 싶은 책이에요. 다시 한번 천천히 곱씹으면서 읽고 싶을 만큼 여운이 깊습니다.</p>
+                                </div>
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="rvwrap">
+                                            <span class="review-id">novelwhale66</span>
+                                            <span class="review-date">2025-05-08</span>
+                                        </div>
+                                        <div class="review-stars" data-rating="3.5"></div>
+                                    </div>
+                                    <p class="review-text">조금 아쉬웠습니다.</p>
+                                </div>
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="rvwrap">
+                                            <span class="review-id">inkriver18</span>
+                                            <span class="review-date">2025-05-05</span>
+                                        </div>
+                                        <div class="review-stars" data-rating="4.5"></div>
+                                    </div>
+                                    <p class="review-text">다시 읽고 싶네요.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                
+                <img src="./subimg/downbanner1.jpg" alt="banner" class="downbanner1">
             </div>
             <!-- leftwrap -->
 
@@ -1455,9 +1736,9 @@
                         <h2>추천 CATing</h2>
                         <span class="title">더보기 +</span>
                     </div>
-                    
+
                     <div class="casting">
-                
+
                         <div class="Bestcontent3">
                             <img src="./subimg/C1.jpg" alt="c">
                             <div class="Bc-box">
@@ -1579,7 +1860,8 @@
         </div>
     </footer>
 
-
+    <script src="./java/common.js"></script>
+    <script src="./java/sub.js"></script>
 </body>
 
 </html>

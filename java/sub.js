@@ -63,6 +63,20 @@ window.onload = function () {
         }
     });
 
+    //작가 정보의 스크롤
+    var swiper = new Swiper(".mySwiperau", {
+        slidesPerView: 6,
+        spaceBetween: 30,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+
+        }, scrollbar: {
+            el: ".swiper-scrollbar",
+            hide: false,
+        }
+    });
+
 
 
     // API 가져오기 fetch
@@ -92,7 +106,7 @@ window.onload = function () {
         try {
 
             // 함께 구매한 상품-도서
-            const querys = ['김영하'];
+            const querys = ['유시민'];
 
             querys.forEach(async (query, i) => {
                 const data = await fetchBooks(query);
@@ -207,6 +221,33 @@ window.onload = function () {
 
                 }
             })
+
+            // 작가정보의 책 스크롤
+            const queryau = ['김영하'];
+
+            queryau.forEach(async (query, i) => {
+                const data = await fetchBooks(query);
+
+                //썸네일이 빈 문자열인것은 제외
+                const origin = data.documents;
+                let book = origin.filter((val) => {
+                    return val.thumbnail != '' && val.contents != '';
+                })
+
+                // for문
+
+                for (let j = 0; j < 13; j++) {
+
+                    let titleT = book[j].title;
+                    let str = titleT.substring(0, 20);
+                    $('.aubox').eq(j).append(`
+                                <img src="${book[j].thumbnail}"/>
+                                <h5>${str}</h5>
+                            `);
+
+                }
+            })
+
         } catch (error) {
             console.log('에러발생', error);
         }
@@ -234,6 +275,15 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
         const data = await response.text();
         document.getElementById("tmpBox").innerHTML = data;
+
+        // 작가 소개
+        const response2 = await fetch("./txt/author.txt");
+        if (!response2.ok) {
+            throw new Error("Network response was not ok");
+        }
+        const data2 = await response2.text();
+        document.getElementById("tmpBox2").innerHTML = data2;
+
         // 목차
         const response3 = await fetch("./txt/Clist.txt");
         if (!response3.ok) {
@@ -241,6 +291,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
         const data3 = await response3.text();
         document.getElementById("tmpBox3").innerHTML = data3;
+
         // 책속으로
         const response4 = await fetch("./txt/intothebook.txt");
         if (!response4.ok) {
@@ -248,6 +299,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
         const data4 = await response4.text();
         document.getElementById("tmpBox4").innerHTML = data4;
+
         // 출판사 서평
         const response5 = await fetch("./txt/pub.txt");
         if (!response5.ok) {
@@ -255,8 +307,67 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
         const data5 = await response5.text();
         document.getElementById("tmpBox5").innerHTML = data5;
+
+
     } catch (error) {
         console.error("There was a problem with the fetch operation:", error);
     }
 });
 
+// 3D책
+$('.box3D').click(function(){
+    $(this).toggleClass('rotate');                        
+});
+
+// // 펼치기 토글
+// $('.hide_txt').click(function () {
+//     const $box = $('#tmpBox3'); // 불러온 텍스트가 들어간 곳
+//     const $icon = $(this).find('i');
+//     const $label = $(this).find('span');
+
+//     $box.toggleClass('open'); // 클래스로 펼치기 / 접기 제어
+
+//     if ($box.hasClass('open')) {
+//         $label.text('접기');
+//         $icon.removeClass('fa-angle-down').addClass('fa-angle-up');
+//     } else {
+//         $label.text('펼쳐보기');
+//         $icon.removeClass('fa-angle-up').addClass('fa-angle-down');
+//     }
+// });
+
+// 펼치기 기능
+$('.hide_txt').click(function () {
+  const $container = $(this).closest('div');  // 가장 가까운 div 찾기 (Clist, intothebook, pub)
+  const $box = $container.find('.hidden_box').first(); // 해당 div 내 hidden_box 찾기
+  const $icon = $(this).find('i');
+  const $label = $(this).find('span');
+
+  $box.toggleClass('open');
+
+  if ($box.hasClass('open')) {
+    $label.text('접기');
+    $icon.removeClass('fa-angle-down').addClass('fa-angle-up');
+  } else {
+    $label.text('펼쳐보기');
+    $icon.removeClass('fa-angle-up').addClass('fa-angle-down');
+  }
+});
+// 리뷰 별점
+document.querySelectorAll('.review-stars').forEach(star => {
+  const rating = parseFloat(star.dataset.rating) || 0;
+  star.style.setProperty('--rating', `${rating * 20}%`);
+});
+
+// 리뷰 전체 탭
+$('.tab-buttons li').click(function () {
+  const target = $(this).data('tab');
+
+  // 버튼 active 클래스 변경
+  $('.tab-buttons li').removeClass('active');
+  $(this).addClass('active');
+
+  // 탭 내용 전환
+  $('.tab-content').removeClass('active');
+  $('#' + target).addClass('active');
+});
