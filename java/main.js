@@ -1,4 +1,15 @@
 $(document).ready(function () {
+   var currentScrollTop=0;
+
+    $(window).scroll(function(){
+          currentScrollTop = $(window).scrollTop();
+          if (currentScrollTop > 110) {
+             $(".second_nav").addClass("fixed");
+         }else{
+             $(".second_nav").removeClass("fixed");
+         };
+    });
+  
 
   //맨위 큰 배너 자동 슬라이드
   var autoswiper = new Swiper(".automySwiper", {
@@ -514,5 +525,6 @@ queriestoday2.forEach((item) => {
       });
     });
   });
+
 });
 

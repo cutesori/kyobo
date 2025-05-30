@@ -315,8 +315,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 // 3D책
-$('.box3D').click(function(){
-    $(this).toggleClass('rotate');                        
+$('.box3D').click(function () {
+    $(this).toggleClass('rotate');
 });
 
 // // 펼치기 토글
@@ -338,36 +338,67 @@ $('.box3D').click(function(){
 
 // 펼치기 기능
 $('.hide_txt').click(function () {
-  const $container = $(this).closest('div');  // 가장 가까운 div 찾기 (Clist, intothebook, pub)
-  const $box = $container.find('.hidden_box').first(); // 해당 div 내 hidden_box 찾기
-  const $icon = $(this).find('i');
-  const $label = $(this).find('span');
+    const $container = $(this).closest('div');  // 가장 가까운 div 찾기 (Clist, intothebook, pub)
+    const $box = $container.find('.hidden_box').first(); // 해당 div 내 hidden_box 찾기
+    const $icon = $(this).find('i');
+    const $label = $(this).find('span');
 
-  $box.toggleClass('open');
+    $box.toggleClass('open');
 
-  if ($box.hasClass('open')) {
-    $label.text('접기');
-    $icon.removeClass('fa-angle-down').addClass('fa-angle-up');
-  } else {
-    $label.text('펼쳐보기');
-    $icon.removeClass('fa-angle-up').addClass('fa-angle-down');
-  }
+    if ($box.hasClass('open')) {
+        $label.text('접기');
+        $icon.removeClass('fa-angle-down').addClass('fa-angle-up');
+    } else {
+        $label.text('펼쳐보기');
+        $icon.removeClass('fa-angle-up').addClass('fa-angle-down');
+    }
 });
 // 리뷰 별점
 document.querySelectorAll('.review-stars').forEach(star => {
-  const rating = parseFloat(star.dataset.rating) || 0;
-  star.style.setProperty('--rating', `${rating * 20}%`);
+    const rating = parseFloat(star.dataset.rating) || 0;
+    star.style.setProperty('--rating', `${rating * 20}%`);
 });
 
 // 리뷰 전체 탭
 $('.tab-buttons li').click(function () {
-  const target = $(this).data('tab');
+    const target = $(this).data('tab');
 
-  // 버튼 active 클래스 변경
-  $('.tab-buttons li').removeClass('active');
-  $(this).addClass('active');
+    // 버튼 active 클래스 변경
+    $('.tab-buttons li').removeClass('active');
+    $(this).addClass('active');
 
-  // 탭 내용 전환
-  $('.tab-content').removeClass('active');
-  $('#' + target).addClass('active');
+    // 탭 내용 전환
+    $('.tab-content').removeClass('active');
+    $('#' + target).addClass('active');
+});
+
+// 중간탭메뉴 스크롤
+$(document).ready(function () {
+    $('.middle_tab a').on('click', function (e) {
+        e.preventDefault(); // 기본 앵커 동작 방지
+
+        var target = $(this).attr('href'); // href 값 가져오기
+        var offset = $(target).offset().top - $('.middle_tab').outerHeight() - 20;
+
+
+        $('html, body').animate({
+            scrollTop: offset
+        }, 600); // 600ms 동안 부드럽게 이동
+    });
+});
+
+// 중간탭 클릭시 언더라인 생기는 효과
+$('.middle_tab li').on('click', function () {
+    $(this).addClass('active').siblings().removeClass('active');
+});
+
+var currentScrollTop = 0;
+
+$(window).scroll(function () {
+    currentScrollTop = $(window).scrollTop();
+    if (currentScrollTop > 110 && currentScrollTop < 850) {
+        $(".second_nav_wrap").addClass("fixed");
+    } else {
+        $(".second_nav_wrap").removeClass("fixed");
+    };
 });
