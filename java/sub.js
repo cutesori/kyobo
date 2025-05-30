@@ -87,38 +87,29 @@ window.onload = function () {
             size: 50,
         });
         const url = `https://dapi.kakao.com/v3/search/book?${params}`;
-
         const response = await fetch(url, {
             method: 'GET',
             headers: {
                 Authorization: "KakaoAK dea026a9cd34d89b629fd0115d3565b7"
             }
         });
-
         if (!response.ok) {
             throw new Error(`HTTP 오류: ${response.status}`);
         }
-
         return response.json();
     }
-
     async function bookData() {
         try {
-
             // 함께 구매한 상품-도서
             const querys = ['유시민'];
-
             querys.forEach(async (query, i) => {
                 const data = await fetchBooks(query);
-
                 //썸네일이 빈 문자열인것은 제외
                 const origin = data.documents;
                 let book = origin.filter((val) => {
                     return val.thumbnail != '' && val.contents != '';
                 })
-
-                // for문 (8개)
-
+                // for문 
                 for (let j = 0; j < 13; j++) {
 
                     let titleT = book[j].title;
@@ -129,7 +120,6 @@ window.onload = function () {
                                 <h6>${book[j].authors}</h6>
                                 <h3>${book[j].price}</h3>
                             `);
-
                 }
             })
 
